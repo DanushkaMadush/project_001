@@ -1,4 +1,26 @@
+@import url("https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
 
+body {
+  background: var(--bg);
+}
+
+app-root {
+  display: block;
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 :root {
 
   /* ── Navy (Primary brand color) ──────────────────────────── */
