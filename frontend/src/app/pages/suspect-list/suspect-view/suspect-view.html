@@ -1,0 +1,179 @@
+<section class="suspect-view-page">
+  <div class="not-found" *ngIf="notFound">
+    <h1>Suspect Not Found</h1>
+    <p>No suspect record exists for this case number.</p>
+    <button class="secondary-button" type="button" (click)="backToList()">Back</button>
+  </div>
+
+  <ng-container *ngIf="suspect as currentSuspect">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Suspect Record</p>
+        <h1>{{ currentSuspect.FullName }}</h1>
+        <p class="subtitle">{{ currentSuspect.CaseNumber }}</p>
+      </div>
+
+      <div class="actions">
+        <button class="secondary-button" type="button" (click)="backToList()">Back</button>
+        <button class="primary-button" type="button" *ngIf="!editMode" (click)="enableEdit()">Update</button>
+        <button class="danger-button" type="button" *ngIf="!editMode" (click)="deleteSuspect()">Delete</button>
+        <button class="primary-button" type="button" *ngIf="editMode" (click)="saveUpdate()">Save Changes</button>
+        <button class="secondary-button" type="button" *ngIf="editMode" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </header>
+
+    <div class="profile-card">
+      <img class="profile-photo" [src]="currentSuspect.Photograph || 'assets/user.png'" [alt]="currentSuspect.FullName" />
+      <div>
+        <span class="status">{{ currentSuspect.Status }}</span>
+        <p>{{ currentSuspect.OffenceType }}</p>
+        <strong>{{ currentSuspect.PoliceStation }}</strong>
+      </div>
+    </div>
+
+    <section class="detail-card">
+      <h2>Identity Details</h2>
+      <div class="detail-grid">
+        <label class="detail-item">
+          <span>Case Number</span>
+          <strong>{{ currentSuspect.CaseNumber }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Full Name</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.FullName" />
+          <strong *ngIf="!editMode">{{ currentSuspect.FullName }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Alias</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.Alias" />
+          <strong *ngIf="!editMode">{{ currentSuspect.Alias || '-' }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Nickname</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.Nickname" />
+          <strong *ngIf="!editMode">{{ currentSuspect.Nickname || '-' }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>NIC</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.NIC" />
+          <strong *ngIf="!editMode">{{ currentSuspect.NIC }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Passport Number</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.PassportNumber" />
+          <strong *ngIf="!editMode">{{ currentSuspect.PassportNumber || '-' }}</strong>
+        </label>
+      </div>
+    </section>
+
+    <section class="detail-card">
+      <h2>Contact Details</h2>
+      <div class="detail-grid">
+        <label class="detail-item">
+          <span>Date of Birth</span>
+          <input *ngIf="editMode" type="date" [(ngModel)]="currentSuspect.DateOfBirth" />
+          <strong *ngIf="!editMode">{{ currentSuspect.DateOfBirth }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Contact Number</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.ContactNumber" />
+          <strong *ngIf="!editMode">{{ currentSuspect.ContactNumber || '-' }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Occupation</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.Occupation" />
+          <strong *ngIf="!editMode">{{ currentSuspect.Occupation || '-' }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Nationality</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.Nationality" />
+          <strong *ngIf="!editMode">{{ currentSuspect.Nationality }}</strong>
+        </label>
+        <label class="detail-item detail-item-wide">
+          <span>Address</span>
+          <textarea *ngIf="editMode" rows="3" [(ngModel)]="currentSuspect.Address"></textarea>
+          <strong *ngIf="!editMode">{{ currentSuspect.Address || '-' }}</strong>
+        </label>
+      </div>
+    </section>
+
+    <section class="detail-card">
+      <h2>Case Details</h2>
+      <div class="detail-grid">
+        <label class="detail-item">
+          <span>Offence Type</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.OffenceType" />
+          <strong *ngIf="!editMode">{{ currentSuspect.OffenceType }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Police Station</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.PoliceStation" />
+          <strong *ngIf="!editMode">{{ currentSuspect.PoliceStation }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Date Recorded</span>
+          <input *ngIf="editMode" type="date" [(ngModel)]="currentSuspect.DateRecorded" />
+          <strong *ngIf="!editMode">{{ currentSuspect.DateRecorded }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Recording Officer</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.RecordingOfficer" />
+          <strong *ngIf="!editMode">{{ currentSuspect.RecordingOfficer }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Status</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.Status" />
+          <strong *ngIf="!editMode">{{ currentSuspect.Status }}</strong>
+        </label>
+      </div>
+    </section>
+
+    <section class="detail-card">
+      <h2>Court Details</h2>
+      <div class="detail-grid">
+        <label class="detail-item">
+          <span>Court ID</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.CourtDetails.CourtId" />
+          <strong *ngIf="!editMode">{{ currentSuspect.CourtDetails.CourtId }}</strong>
+        </label>
+        <label class="detail-item">
+          <span>Court</span>
+          <input *ngIf="editMode" type="text" [(ngModel)]="currentSuspect.CourtDetails.Court" />
+          <strong *ngIf="!editMode">{{ currentSuspect.CourtDetails.Court }}</strong>
+        </label>
+      </div>
+    </section>
+
+    <section class="detail-card">
+      <h2>Attachments</h2>
+      <div class="attachment-list" *ngIf="currentSuspect.Attachments?.length; else noAttachments">
+        <article class="attachment-item" *ngFor="let attachment of currentSuspect.Attachments">
+          <span>{{ attachment.AttachmentId }}</span>
+          <strong>{{ attachment.FileName }}</strong>
+          <p>{{ attachment.FileType }} · {{ attachment.MimeType }}</p>
+          <p>{{ attachment.FilePath }}</p>
+          <p>{{ attachment.Description }}</p>
+        </article>
+      </div>
+      <ng-template #noAttachments>
+        <p class="muted-text">No attachments recorded.</p>
+      </ng-template>
+    </section>
+
+    <section class="detail-card">
+      <h2>Notes and Remarks</h2>
+      <div class="detail-grid">
+        <label class="detail-item detail-item-wide">
+          <span>Notes</span>
+          <textarea *ngIf="editMode" rows="4" [(ngModel)]="currentSuspect.Notes"></textarea>
+          <strong *ngIf="!editMode">{{ currentSuspect.Notes || '-' }}</strong>
+        </label>
+        <label class="detail-item detail-item-wide">
+          <span>Remarks</span>
+          <textarea *ngIf="editMode" rows="4" [(ngModel)]="currentSuspect.Remarks"></textarea>
+          <strong *ngIf="!editMode">{{ currentSuspect.Remarks || '-' }}</strong>
+        </label>
+      </div>
+    </section>
+  </ng-container>
+</section>
