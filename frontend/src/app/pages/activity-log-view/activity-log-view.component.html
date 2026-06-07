@@ -1,0 +1,123 @@
+<section class="activity-log-view-page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a routerLink="/home">Dashboard</a>
+    <span>/</span>
+    <a routerLink="/activity-log">Activity Log</a>
+    <span>/</span>
+    <strong>{{ log?.LogId || 'Not Found' }}</strong>
+  </nav>
+
+  <section class="not-found-card" *ngIf="notFound">
+    <i class="ti ti-file-x"></i>
+    <h1>Activity Log Not Found</h1>
+    <p>No audit log exists for this log ID.</p>
+    <button class="secondary-button" type="button" (click)="backToLogs()">Back</button>
+  </section>
+
+  <ng-container *ngIf="log as currentLog">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Audit Event</p>
+        <h1>{{ currentLog.Action }}</h1>
+        <p class="subtitle">{{ currentLog.LogId }} · {{ currentLog.DateTime | date: 'medium' }}</p>
+      </div>
+
+      <button class="secondary-button" type="button" (click)="backToLogs()">Back</button>
+    </header>
+
+    <section class="summary-card">
+      <div>
+        <span>Status</span>
+        <strong class="badge" [ngClass]="badgeClass(currentLog.Status)">{{ currentLog.Status }}</strong>
+      </div>
+      <div>
+        <span>Severity</span>
+        <strong class="badge" [ngClass]="badgeClass(currentLog.Severity)">{{ currentLog.Severity }}</strong>
+      </div>
+      <div>
+        <span>Action Type</span>
+        <strong>{{ currentLog.ActionType }}</strong>
+      </div>
+    </section>
+
+    <section class="detail-card">
+      <h2>Event Summary</h2>
+      <div class="detail-grid">
+        <div class="detail-item">
+          <span>Log ID</span>
+          <strong>{{ currentLog.LogId }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Action</span>
+          <strong>{{ currentLog.Action }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Action Type</span>
+          <strong>{{ currentLog.ActionType }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Date/Time</span>
+          <strong>{{ currentLog.DateTime | date: 'medium' }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Status</span>
+          <strong class="badge" [ngClass]="badgeClass(currentLog.Status)">{{ currentLog.Status }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Severity</span>
+          <strong class="badge" [ngClass]="badgeClass(currentLog.Severity)">{{ currentLog.Severity }}</strong>
+        </div>
+        <div class="detail-item detail-item-wide">
+          <span>Description</span>
+          <strong>{{ currentLog.Description }}</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-card">
+      <h2>User Details</h2>
+      <div class="detail-grid">
+        <div class="detail-item">
+          <span>User ID</span>
+          <strong>{{ currentLog.UserId }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Username</span>
+          <strong>{{ currentLog.Username }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>User Role</span>
+          <strong>{{ currentLog.UserRole }}</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-card">
+      <h2>Entity Details</h2>
+      <div class="detail-grid">
+        <div class="detail-item">
+          <span>Entity Type</span>
+          <strong>{{ currentLog.EntityType || '-' }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Entity ID</span>
+          <strong>{{ currentLog.EntityId || '-' }}</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-card">
+      <h2>Technical Details</h2>
+      <div class="detail-grid">
+        <div class="detail-item">
+          <span>IP Address</span>
+          <strong>{{ currentLog.IpAddress }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Device</span>
+          <strong>{{ currentLog.Device }}</strong>
+        </div>
+      </div>
+    </section>
+  </ng-container>
+</section>
