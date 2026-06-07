@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SuspectsService } from '../../services/suspects.service';
 import { SuspectCard } from "./suspect-card/suspect-card";
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-suspect-list',
@@ -20,7 +21,10 @@ export class SuspectListComponent {
   selectedPoliceStation = '';
   selectedDate = '';
 
-  constructor(private suspectsService: SuspectsService) {}
+  constructor(
+    private suspectsService: SuspectsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.suspects = this.suspectsService.getSuspects();
@@ -55,6 +59,10 @@ export class SuspectListComponent {
     this.selectedPoliceStation = '';
     this.selectedDate = '';
     this.applyFilters();
+  }
+
+  viewSuspect(caseNumber: string): void {
+    this.router.navigate(['/suspect', caseNumber]);
   }
 
   private applyFilters(): void {

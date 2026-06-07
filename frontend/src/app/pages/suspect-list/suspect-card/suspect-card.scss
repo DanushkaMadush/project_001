@@ -1,3 +1,14 @@
+:host {
+  display: block;
+  cursor: pointer;
+  outline: none;
+}
+
+:host(:focus-visible) .suspect-card {
+  border-color: var(--navy-600);
+  box-shadow: 0 0 0 3px var(--navy-50), 0 14px 30px rgba(15, 25, 35, 0.09);
+}
+
 .suspect-card {
   height: 100%;
   padding: 18px;
