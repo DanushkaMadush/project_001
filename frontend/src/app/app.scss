@@ -1,4 +1,26 @@
+@import url("https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
 
+body {
+  background: var(--bg);
+}
+
+app-root {
+  display: block;
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 :root {
 
   /* ── Navy (Primary brand color) ──────────────────────────── */
@@ -57,31 +79,92 @@
 /* =============================================================
    DARK MODE OVERRIDES
    ============================================================= */
+/* ─────────────────────────────────────────────────────────────
+   How it works:
+   - [data-theme="dark"]  → user manually chose dark
+   - [data-theme="light"] → user manually chose light
+   - No data-theme attr   → falls back to OS preference (the
+                            @media block below handles that)
+   ───────────────────────────────────────────────────────────── */
 
+/* Manual dark override (set by toggle) */
+[data-theme="dark"] {
+  --bg:        #0a0f14;
+  --surface:   #111820;
+  --surface-2: #182030;
+
+  --border:    rgba(255, 255, 255, 0.07);
+  --border-md: rgba(255, 255, 255, 0.13);
+
+  --text-1: #e8edf2;
+  --text-2: #7a8fa5;
+  --text-3: #3a5068;
+
+  --navy-800: #031f3a;
+  --navy-700: #052d55;
+  --navy-50:  #1a2e44;
+
+  --amber-600: #FAC775;
+  --red-600:   #F09595;
+  --green-600: #97C459;
+
+  --dot-new:    #F09595;
+  --dot-update: #378ADD;
+  --dot-closed: #97C459;
+
+  --red-bg:   rgba(80,  19,  19, 0.13);
+  --navy-50:  rgba(12,  68, 124, 0.13);
+  --green-bg: rgba(23,  52,   4, 0.13);
+}
+
+/* Manual light override (set by toggle) */
+[data-theme="light"] {
+  --bg:        #f0f2f5;
+  --surface:   #ffffff;
+  --surface-2: #f6f7f9;
+
+  --border:    rgba(0, 0, 0, 0.08);
+  --border-md: rgba(0, 0, 0, 0.14);
+
+  --text-1: #0f1923;
+  --text-2: #4a5568;
+  --text-3: #8a97a8;
+
+  --navy-800: #042C53;
+  --navy-700: #0C3D6B;
+  --navy-50:  #E6F1FB;
+
+  --amber-600: #BA7517;
+  --red-600:   #A32D2D;
+  --green-600: #3B6D11;
+
+  --dot-new:    #A32D2D;
+  --dot-update: #185FA5;
+  --dot-closed: #3B6D11;
+
+  --red-bg:   #FCEBEB;
+  --green-bg: #EAF3DE;
+}
+
+/* OS/system fallback — when no manual preference is saved */
 @media (prefers-color-scheme: dark) {
-  :root {
-
-    /* ── Page & surface backgrounds ─────────────────────────── */
+  :root:not([data-theme="light"]) {
     --bg:        #0a0f14;
     --surface:   #111820;
     --surface-2: #182030;
 
-    /* ── Borders ─────────────────────────────────────────────── */
     --border:    rgba(255, 255, 255, 0.07);
     --border-md: rgba(255, 255, 255, 0.13);
 
-    /* ── Typography ─────────────────────────────────────────── */
     --text-1: #e8edf2;
     --text-2: #7a8fa5;
     --text-3: #3a5068;
     --text-4: #8be6e1;
 
-    /* ── Navy (dark mode shifts) ─────────────────────────────── */
     --navy-800: #031f3a;
     --navy-700: #052d55;
     --navy-50:  #1a2e44;
 
-    /* ── Semantic colors shift to lighter variants ─────────── */
     --amber-600: #FAC775;
     --red-600:   #F09595;
     --green-600: #97C459;
@@ -90,11 +173,9 @@
     --dot-update: #378ADD;
     --dot-closed: #97C459;
 
-    /* ── Badge backgrounds (semi-transparent in dark) ─────── */
     --red-bg:   rgba(80,  19,  19, 0.13);
     --navy-50:  rgba(12,  68, 124, 0.13);
     --green-bg: rgba(23,  52,   4, 0.13);
-
   }
 }
 

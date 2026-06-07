@@ -7,6 +7,7 @@ import { SuspectListComponent } from './pages/suspect-list/suspect-list.componen
 import { SuspectAddComponent } from './pages/suspect-list/suspect-add/suspect-add.component';
 import { SuspectUpdateComponent } from './pages/suspect-list/suspect-update/suspect-update.component';
 import { SuspectViewComponent } from './pages/suspect-list/suspect-view/suspect-view';
+import { Home2 } from './pages/home-2/home-2';
 
 export const routes: Routes = [
   {
@@ -23,6 +24,11 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+
+  {
+    path: 'home2',
+    component: Home2
   },
 
   {
