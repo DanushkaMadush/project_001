@@ -2,9 +2,9 @@ import { Component, inject } from '@angular/core';
 import { SuspectsService } from '../../services/suspects.service';
 import { SuspectCard } from "./suspect-card/suspect-card";
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 import { Breadcrumb } from "../../layout/breadcrumb/breadcrumb";
 import { BreadcrumbService } from '../../services/breadcrumb';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-suspect-list',
@@ -23,7 +23,12 @@ export class SuspectListComponent {
   selectedPoliceStation = '';
   selectedDate = '';
 
-  constructor(private suspectsService: SuspectsService) {}
+  private bc = inject(BreadcrumbService);
+
+  constructor(
+    private suspectsService: SuspectsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
         this.bc.set([
@@ -62,10 +67,6 @@ export class SuspectListComponent {
     this.selectedPoliceStation = '';
     this.selectedDate = '';
     this.applyFilters();
-  }
-
-  viewSuspect(caseNumber: string): void {
-    this.router.navigate(['/suspect', caseNumber]);
   }
 
   private applyFilters(): void {
@@ -110,5 +111,9 @@ export class SuspectListComponent {
 
   trackByCaseNumber(index: number, suspect: any): string {
     return suspect.CaseNumber;
+  }
+
+  viewSuspect(caseNumber: string): void {
+    this.router.navigate(['/suspect', caseNumber]);
   }
 }
