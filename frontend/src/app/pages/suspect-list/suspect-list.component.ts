@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SuspectsService } from '../../services/suspects.service';
 import { SuspectCard } from "./suspect-card/suspect-card";
 import { CommonModule } from '@angular/common';
+import { Breadcrumb } from "../../layout/breadcrumb/breadcrumb";
+import { BreadcrumbService } from '../../services/breadcrumb';
 
 @Component({
   selector: 'app-suspect-list',
-  imports: [SuspectCard, CommonModule],
+  imports: [SuspectCard, CommonModule, Breadcrumb],
   templateUrl: './suspect-list.component.html',
   styleUrl: './suspect-list.component.scss'
 })
@@ -20,9 +22,15 @@ export class SuspectListComponent {
   selectedPoliceStation = '';
   selectedDate = '';
 
+    private bc = inject(BreadcrumbService);
+
   constructor(private suspectsService: SuspectsService) {}
 
   ngOnInit(): void {
+        this.bc.set([
+      { label: 'Home',         path: '/home2' },
+      { label: 'Suspect List' }               // no path = current page
+    ]);
     this.suspects = this.suspectsService.getSuspects();
     this.offenceTypes = this.getUniqueValues('OffenceType');
     this.policeStations = this.getUniqueValues('PoliceStation');
