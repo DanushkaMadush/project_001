@@ -1,87 +1,68 @@
 <section class="suspect-list-page">
-  <div class="page-header">
-    <div>
-      <p class="eyebrow">Suspect Records</p>
-      <h1>All Suspects</h1>
-      <p class="subtitle">
-        Search and filter suspect profiles by offence, police station and recorded date.
-      </p>
-    </div>
+    <div class="page-header">
+        <div>
+            <p class="eyebrow">Suspect Records</p>
+            <h1>All Suspects</h1>
+            <p class="subtitle">
+                Search and filter suspect profiles by offence, police station and recorded date.
+            </p>
+        </div>
 
-    <div class="summary-card">
+        <!-- <div class="summary-card">
       <span>Matching Records</span>
       <strong>{{ filteredSuspects.length }}</strong>
-    </div>
-  </div>
-
-  <div class="toolbar">
-    <div class="search-box">
-      <i class="ti ti-search"></i>
-
-      <input
-        type="text"
-        placeholder="Search name, NIC, passport, case, offence or officer"
-        [value]="searchText"
-        (input)="search(searchInput.value)"
-        #searchInput
-      />
+    </div> -->
     </div>
 
-    <div class="filter-grid">
-      <label class="filter-field">
-        <span>Offence Type</span>
-        <select
-          [value]="selectedOffenceType"
-          (change)="filterByOffenceType(offenceInput.value)"
-          #offenceInput
-        >
-          <option value="">All offences</option>
-          <option *ngFor="let offence of offenceTypes" [value]="offence">
-            {{ offence }}
-          </option>
-        </select>
-      </label>
+    <div class="toolbar">
+        <div class="search-box">
+            <i class="ti ti-search"></i>
 
-      <label class="filter-field">
-        <span>Police Station</span>
-        <select
-          [value]="selectedPoliceStation"
-          (change)="filterByPoliceStation(stationInput.value)"
-          #stationInput
-        >
-          <option value="">All stations</option>
-          <option *ngFor="let station of policeStations" [value]="station">
-            {{ station }}
-          </option>
-        </select>
-      </label>
+            <input type="text" placeholder="Search name, NIC, passport, case, offence or officer" [value]="searchText"
+                (input)="search(searchInput.value)" #searchInput />
+        </div>
 
-      <label class="filter-field">
-        <span>Recorded Date</span>
-        <input
-          type="date"
-          [value]="selectedDate"
-          (input)="filterByDate(dateInput.value)"
-          #dateInput
-        />
-      </label>
+        <div class="filter-grid">
+            <label class="filter-field">
+                <span>Offence Type</span>
+                <select [value]="selectedOffenceType" (change)="filterByOffenceType(offenceInput.value)" #offenceInput>
+                    <option value="">All offences</option>
+                    <option *ngFor="let offence of offenceTypes" [value]="offence">
+                        {{ offence }}
+                    </option>
+                </select>
+            </label>
 
-      <button class="reset-button" type="button" (click)="resetFilters()">
-        Clear Filters
-      </button>
+            <label class="filter-field">
+                <span>Police Station</span>
+                <select [value]="selectedPoliceStation" (change)="filterByPoliceStation(stationInput.value)"
+                    #stationInput>
+                    <option value="">All stations</option>
+                    <option *ngFor="let station of policeStations" [value]="station">
+                        {{ station }}
+                    </option>
+                </select>
+            </label>
+
+            <label class="filter-field">
+                <span>Recorded Date</span>
+                <input type="date" [value]="selectedDate" (input)="filterByDate(dateInput.value)" #dateInput />
+            </label>
+
+            <button class="reset-button" type="button" (click)="resetFilters()">
+                Clear Filters
+            </button>
+        </div>
     </div>
-  </div>
 
-  <div class="empty-state" *ngIf="filteredSuspects.length === 0">
-    <i class="ti ti-folder-search"></i>
-    <h3>No suspects found</h3>
-    <p>Try another search term, offence type, station or recorded date.</p>
-  </div>
+    <div class="empty-state" *ngIf="filteredSuspects.length === 0">
+        <i class="ti ti-folder-search"></i>
+        <h3>No suspects found</h3>
+        <p>Try another search term, offence type, station or recorded date.</p>
+    </div>
 
-  <div class="suspect-grid" *ngIf="filteredSuspects.length > 0">
-    <app-suspect-card
-      *ngFor="let suspect of filteredSuspects; trackBy: trackByCaseNumber"
-      [suspect]="suspect">
-    </app-suspect-card>
-  </div>
+    <div class="suspect-grid" *ngIf="filteredSuspects.length > 0">
+        <app-suspect-card *ngFor="let suspect of filteredSuspects; trackBy: trackByCaseNumber" [suspect]="suspect">
+        </app-suspect-card>
+    </div>
 </section>
