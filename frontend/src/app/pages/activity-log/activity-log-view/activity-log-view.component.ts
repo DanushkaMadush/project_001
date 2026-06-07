@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Breadcrumb } from '../../layout/breadcrumb/breadcrumb';
-import { BreadcrumbService } from '../../services/breadcrumb';
-import { LogsService } from '../../services/logs.service';
+import { Breadcrumb } from '../../../layout/breadcrumb/breadcrumb';
+import { LogsService } from '../../../services/logs.service';
+import { BreadcrumbService } from '../../../services/breadcrumb';
 
 @Component({
   selector: 'app-activity-log-view',
