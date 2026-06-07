@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+
+  font-size: 11px;
+  color: var(--text-3);
+
+  font-family: 'DM Mono', monospace;
+
+  border-top: 1px solid var(--border);
+
+}
