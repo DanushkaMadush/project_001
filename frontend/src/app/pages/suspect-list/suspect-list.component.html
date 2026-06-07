@@ -1,1 +1,42 @@
-<p>suspect-list works!</p>
+<section class="suspect-list-page">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Suspect Records</p>
+      <h1>All Suspects</h1>
+      <p class="subtitle">
+        View suspect profiles, offence details, courts and related case files.
+      </p>
+    </div>
+
+    <div class="summary-card">
+      <span>Total Records</span>
+      <strong>{{ filteredSuspects.length }}</strong>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="search-box">
+      <i class="ti ti-search"></i>
+
+      <input
+        type="text"
+        placeholder="Search name, NIC, passport, offence or station"
+        #searchInput
+        (input)="search(searchInput.value)"
+      />
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="filteredSuspects.length === 0">
+    <i class="ti ti-folder-search"></i>
+    <h3>No suspects found</h3>
+    <p>Try searching by another name, NIC, passport number or case number.</p>
+  </div>
+
+  <div class="suspect-grid" *ngIf="filteredSuspects.length > 0">
+    <app-suspect-card
+      *ngFor="let suspect of filteredSuspects; trackBy: trackByCaseNumber"
+      [suspect]="suspect">
+    </app-suspect-card>
+  </div>
+</section>
