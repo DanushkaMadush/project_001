@@ -15,7 +15,11 @@
 
       <div class="nav-right">
 
-        <a href="#" class="nav-btn">
+        <button class="nav-btn" (click)="toggleTheme()" [title]="isDark ? 'Switch to light mode' : 'Switch to dark mode'" aria-label="Toggle theme">
+          <i class="ti" [ngClass]="isDark ? 'ti-sun' : 'ti-moon'"></i>
+        </button>
+
+        <a href="#" class="nav-btn" title="Settings" aria-label="Settings">
           <i class="ti ti-settings"></i>
         </a>
 
