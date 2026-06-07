@@ -1,0 +1,89 @@
+<section class="reports-page">
+  <app-breadcrumb></app-breadcrumb>
+
+  <header class="page-header">
+    <p class="eyebrow">Reporting</p>
+    <h1>Reports</h1>
+    <p class="subtitle">Generate summaries, activity reports and suspect-related reports for review or export.</p>
+  </header>
+
+  <section class="filter-panel">
+    <div class="filter-grid">
+      <label class="filter-field report-type-field">
+        <span>Report Type</span>
+        <select [(ngModel)]="selectedReportType" name="reportType">
+          <option value="">Select report type</option>
+          <option *ngFor="let reportType of reportTypes" [value]="reportType">{{ reportType }}</option>
+        </select>
+        <small *ngIf="hasReportTypeError">Report type is required.</small>
+      </label>
+
+      <label class="filter-field">
+        <span>From Date</span>
+        <input type="date" [(ngModel)]="fromDate" name="fromDate" />
+      </label>
+
+      <label class="filter-field">
+        <span>To Date</span>
+        <input type="date" [(ngModel)]="toDate" name="toDate" />
+      </label>
+
+      <button class="primary-button" type="button" (click)="generatePreview()">
+        <i class="ti ti-report-analytics" aria-hidden="true"></i>
+        Generate
+      </button>
+    </div>
+
+    <p class="validation-message" *ngIf="hasDateRangeError">From Date cannot be after To Date.</p>
+  </section>
+
+  <section class="preview-card" *ngIf="previewVisible">
+    <div class="preview-header">
+      <div>
+        <p class="eyebrow">Preview</p>
+        <h2>{{ selectedReportType }}</h2>
+        <p class="subtitle">
+          Date Range:
+          <strong>{{ fromDate || 'Any start date' }}</strong>
+          to
+          <strong>{{ toDate || 'Any end date' }}</strong>
+        </p>
+      </div>
+
+      <div class="download-actions">
+        <button class="secondary-button" type="button">
+          <i class="ti ti-file-type-pdf" aria-hidden="true"></i>
+          Download as PDF
+        </button>
+        <button class="secondary-button" type="button">
+          <i class="ti ti-file-spreadsheet" aria-hidden="true"></i>
+          Download as CSV
+        </button>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Reference No</th>
+            <th>Title / Description</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let row of previewRows">
+            <td>{{ row.referenceNo }}</td>
+            <td>{{ row.description }}</td>
+            <td>{{ row.category }}</td>
+            <td><span class="badge" [ngClass]="statusClass(row.status)">{{ row.status }}</span></td>
+            <td>{{ row.date | date: 'mediumDate' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</section>
