@@ -1,28 +1,13 @@
+:host {
+  display: block;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
 .activity-log-page {
   min-height: 100vh;
   padding: 28px;
   background: var(--bg);
   color: var(--text-1);
-}
-
-.breadcrumb {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 18px;
-  color: var(--text-3);
-  font-size: 13px;
-
-  a {
-    color: var(--navy-600);
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  strong {
-    color: var(--text-2);
-    font-weight: 600;
-  }
 }
 
 .page-header {
@@ -63,7 +48,8 @@
 
 .toolbar {
   display: grid;
-  gap: 14px;
+  gap: 16px;
+  justify-content: start;
   margin-bottom: 18px;
   padding: 16px;
 }
@@ -72,6 +58,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  width: min(100%, 520px);
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--surface-2);
@@ -100,9 +87,10 @@
 
 .filter-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) auto;
-  gap: 12px;
+  grid-template-columns: repeat(4, minmax(150px, 220px)) 128px;
+  gap: 14px;
   align-items: end;
+  justify-content: start;
 }
 
 .filter-field {
@@ -137,6 +125,7 @@
 }
 
 .reset-button {
+  width: 128px;
   height: 42px;
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -257,6 +246,12 @@ tbody tr {
   p {
     margin: 0;
     color: var(--text-3);
+  }
+}
+
+@media (max-width: 1100px) {
+  .filter-grid {
+    grid-template-columns: repeat(2, minmax(150px, 220px)) 128px;
   }
 }
 

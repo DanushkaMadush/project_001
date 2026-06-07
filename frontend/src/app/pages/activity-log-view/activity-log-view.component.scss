@@ -1,29 +1,13 @@
+:host {
+  display: block;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
 .activity-log-view-page {
   min-height: 100vh;
   padding: 28px;
   background: var(--bg);
   color: var(--text-1);
-}
-
-.breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 18px;
-  color: var(--text-3);
-  font-size: 13px;
-
-  a {
-    color: var(--navy-600);
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  strong {
-    color: var(--text-2);
-    font-weight: 600;
-  }
 }
 
 .page-header {
