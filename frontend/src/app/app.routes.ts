@@ -8,6 +8,7 @@ import { UserManagementComponent } from './pages/user-management/user-management
 import { SuspectListComponent } from './pages/suspect-list/suspect-list.component';
 import { SuspectAddComponent } from './pages/suspect-list/suspect-add/suspect-add.component';
 import { SuspectUpdateComponent } from './pages/suspect-list/suspect-update/suspect-update.component';
+import { Home2 } from './pages/home-2/home-2';
 
 export const routes: Routes = [
   {
@@ -24,6 +25,11 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+
+  {
+    path: 'home2',
+    component: Home2
   },
 
   {
