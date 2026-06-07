@@ -1,34 +1,34 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-interface AdminStats {
+
+interface DashboardStats {
   totalSuspects: number;
-  systemUsers: number;
+  activeCases: number;
   newThisMonth: number;
   casesClosed: number;
-  totalRoles: number;
 }
 
 interface ActivityItem {
-  type: 'new' | 'update' | 'closed' | 'admin';
+  type: 'new' | 'update' | 'closed';
   title: string;
   sub: string;
   time: string;
 }
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  selector: 'app-home-2',
+  imports: [CommonModule,RouterModule],
+  templateUrl: './home-2.html',
+  styleUrl: './home-2.scss',
 })
-export class HomeComponent implements OnInit, OnDestroy {
-
-  /* ── Admin info ── */
-  adminName      = 'Admin Silva';
-  adminFirstName = 'Silva';
+export class Home2 implements OnInit,OnDestroy {
+  
+  /* ── Officer info ── */
+  officerName     = 'P.C. Fernando';
+  officerFirstName = 'Fernando';
+  officerInitials = 'PF';
 
   /* ── Live clock ── */
   liveTime = '';
@@ -48,28 +48,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   /* ── Stats (replace with real service calls) ── */
-  stats: AdminStats = {
+  stats: DashboardStats = {
     totalSuspects: 1284,
-    systemUsers:   18,
+    activeCases:   47,
     newThisMonth:  12,
-    casesClosed:   319,
-    totalRoles:    4
+    casesClosed:   319
   };
 
   /* ── Recent activity (replace with real service call) ── */
   recentActivity: ActivityItem[] = [
-    {
-      type:  'admin',
-      title: 'New user added — P.C. Rathnayake',
-      sub:   'Added by Admin Silva · Officer account created',
-      time:  '10:02'
-    },
-    {
-      type:  'admin',
-      title: 'Role updated — Senior Officer',
-      sub:   'Permissions modified by Admin Silva',
-      time:  '09:44'
-    },
     {
       type:  'new',
       title: 'New suspect profile — Kamal Perera',
@@ -87,6 +74,18 @@ export class HomeComponent implements OnInit, OnDestroy {
       title: 'Case closed — Suresh Mendis',
       sub:   'Case #2026-0301 · Court verdict recorded',
       time:  'Yesterday'
+    },
+    {
+      type:  'update',
+      title: 'Attachment added — Roshan Silva',
+      sub:   'Case #2026-0275 · Scanned court document',
+      time:  'Yesterday'
+    },
+    {
+      type:  'new',
+      title: 'New suspect profile — Chaminda Wickrama',
+      sub:   'Case #2026-0399 · Added by Sgt. Bandara',
+      time:  '2 Jun'
     }
   ];
 
@@ -104,7 +103,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     const days   = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
     const months = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE',
                     'JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
-    const day   = days[now.getDay()];
+    const day = days[now.getDay()];
     const date  = now.getDate();
     const month = months[now.getMonth()];
     const year  = now.getFullYear();

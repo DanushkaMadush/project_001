@@ -1,0 +1,24 @@
+<nav class="breadcrumb" aria-label="Breadcrumb" *ngIf="bc.crumbs().length > 0">
+  <ol>
+    <li *ngFor="let item of bc.crumbs(); let first = first; let last = last">
+
+      <!-- Linked crumb -->
+      <a *ngIf="item.path && !last" [routerLink]="item.path" class="crumb-link">
+        <i *ngIf="first" class="ti ti-home" aria-hidden="true"></i>
+        {{ item.label }}
+      </a>
+
+      <!-- Current page (no link) -->
+      <span *ngIf="!item.path || last" class="crumb-current" [attr.aria-current]="last ? 'page' : null">
+        <i *ngIf="first" class="ti ti-home" aria-hidden="true"></i>
+        {{ item.label }}
+      </span>
+
+      <!-- Separator -->
+      <span class="crumb-sep" aria-hidden="true" *ngIf="!last">
+        <i class="ti ti-chevron-right"></i>
+      </span>
+
+    </li>
+  </ol>
+</nav>

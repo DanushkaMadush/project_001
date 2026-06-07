@@ -1,0 +1,1652 @@
+[
+  {
+    "CaseNumber": "NCB-2025-0001",
+    "FullName": "Kasun Perera",
+    "Alias": "Blue Falcon",
+    "Nickname": "Kassa",
+    "NIC": "900123456V",
+    "PassportNumber": "N1234567",
+    "DateOfBirth": "1990-11-04",
+    "Address": "No. 14, Main Street, Negombo",
+    "ContactNumber": "073-3341057",
+    "Occupation": "Driver",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-05-01",
+    "RecordingOfficer": "IP D. Wijeratne",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 900123456V and passport N1234567.",
+    "CreatedBy": "admin",
+    "CreatedAt": "2025-06-01T11:17:00Z",
+    "UpdateBy": "case_officer_01",
+    "UpdatedAt": "2025-06-10T12:17:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-001-01",
+        "FileName": "suspect_001_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_001/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-001-02",
+        "FileName": "suspect_001_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_001/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-001-03",
+        "FileName": "suspect_001_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_001/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession of heroin",
+    "PoliceStation": "Negombo Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Active",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0002",
+    "FullName": "Nimal Fernando",
+    "Alias": "Night Rider",
+    "Nickname": "Nima",
+    "NIC": "900123456V",
+    "PassportNumber": "N1234567",
+    "DateOfBirth": "1990-12-04",
+    "Address": "No. 88, Kimbulapitiya Road, Negombo",
+    "ContactNumber": "079-8078673",
+    "Occupation": "Fisherman",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-05-04",
+    "RecordingOfficer": "SI N. Perera",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 900123456V and passport N1234567.",
+    "CreatedBy": "case_officer_01",
+    "CreatedAt": "2025-06-02T16:17:00Z",
+    "UpdateBy": "case_officer_02",
+    "UpdatedAt": "2025-06-20T16:17:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-002-01",
+        "FileName": "suspect_002_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_002/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-002-02",
+        "FileName": "suspect_002_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_002/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-002-03",
+        "FileName": "suspect_002_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_002/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession of cannabis",
+    "PoliceStation": "Minuwangoda Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Under Investigation",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0003",
+    "FullName": "Saman Silva",
+    "Alias": "Kalu Malli",
+    "Nickname": "Sama",
+    "NIC": "791499914V",
+    "PassportNumber": "N6392986",
+    "DateOfBirth": "1979-04-08",
+    "Address": "No. 21, Minuwangoda Road, Minuwangoda",
+    "ContactNumber": "073-8038374",
+    "Occupation": "Three-Wheeler Driver",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-05-07",
+    "RecordingOfficer": "Sgt. R. Fernando",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 791499914V and passport N6392986.",
+    "CreatedBy": "case_officer_02",
+    "CreatedAt": "2025-06-03T15:08:00Z",
+    "UpdateBy": "records_clerk",
+    "UpdatedAt": "2025-06-04T19:08:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-003-01",
+        "FileName": "suspect_003_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_003/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-003-02",
+        "FileName": "suspect_003_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_003/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-003-03",
+        "FileName": "suspect_003_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_003/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Trafficking of narcotic substances",
+    "PoliceStation": "Seeduwa Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Charged",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0004",
+    "FullName": "Lahiru Jayasinghe",
+    "Alias": "Dock Man",
+    "Nickname": "Lahi",
+    "NIC": "858536477V",
+    "PassportNumber": "N8471559",
+    "DateOfBirth": "1985-05-26",
+    "Address": "No. 5, Katunayake Road, Seeduwa",
+    "ContactNumber": "076-6708456",
+    "Occupation": "Shop Assistant",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-05-10",
+    "RecordingOfficer": "PC S. Bandara",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 858536477V and passport N8471559.",
+    "CreatedBy": "records_clerk",
+    "CreatedAt": "2025-06-04T11:18:00Z",
+    "UpdateBy": "admin",
+    "UpdatedAt": "2025-06-10T16:18:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-004-01",
+        "FileName": "suspect_004_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_004/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-004-02",
+        "FileName": "suspect_004_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_004/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-004-03",
+        "FileName": "suspect_004_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_004/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession of methamphetamine",
+    "PoliceStation": "Katunayake Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Convicted",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0005",
+    "FullName": "Chaminda Gunasekara",
+    "Alias": "Courier",
+    "Nickname": "Chami",
+    "NIC": "863608513V",
+    "PassportNumber": "N6903091",
+    "DateOfBirth": "1986-06-04",
+    "Address": "No. 37, Chilaw Road, Kochchikade",
+    "ContactNumber": "075-5437923",
+    "Occupation": "Warehouse Worker",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-05-13",
+    "RecordingOfficer": "IP M. Herath",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 863608513V and passport N6903091.",
+    "CreatedBy": "admin",
+    "CreatedAt": "2025-06-05T10:54:00Z",
+    "UpdateBy": "case_officer_01",
+    "UpdatedAt": "2025-06-09T12:54:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-005-01",
+        "FileName": "suspect_005_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_005/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-005-02",
+        "FileName": "suspect_005_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_005/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-005-03",
+        "FileName": "suspect_005_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_005/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Distribution of controlled substances",
+    "PoliceStation": "Kochchikade Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Closed",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0006",
+    "FullName": "Ruwan Bandara",
+    "Alias": "Lucky",
+    "Nickname": "Ruwa",
+    "NIC": "798707870V",
+    "PassportNumber": "N8249103",
+    "DateOfBirth": "1979-02-13",
+    "Address": "No. 102, Colombo Road, Ja-Ela",
+    "ContactNumber": "079-7067228",
+    "Occupation": "Mechanic",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-05-16",
+    "RecordingOfficer": "SI K. Silva",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 798707870V and passport N8249103.",
+    "CreatedBy": "case_officer_01",
+    "CreatedAt": "2025-06-06T11:05:00Z",
+    "UpdateBy": "case_officer_02",
+    "UpdatedAt": "2025-06-16T17:05:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-006-01",
+        "FileName": "suspect_006_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_006/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-006-02",
+        "FileName": "suspect_006_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_006/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-006-03",
+        "FileName": "suspect_006_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_006/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Narcotic smuggling attempt",
+    "PoliceStation": "Ja-Ela Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Released",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0007",
+    "FullName": "Dinesh Wijesinghe",
+    "Alias": "Raja",
+    "Nickname": "Dina",
+    "NIC": "852345678V",
+    "PassportNumber": "N2345678",
+    "DateOfBirth": "1985-10-07",
+    "Address": "No. 9, Kurana, Negombo",
+    "ContactNumber": "073-5855124",
+    "Occupation": "Port Laborer",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-05-19",
+    "RecordingOfficer": "IP D. Wijeratne",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 852345678V and passport N2345678.",
+    "CreatedBy": "case_officer_02",
+    "CreatedAt": "2025-06-07T15:34:00Z",
+    "UpdateBy": "records_clerk",
+    "UpdatedAt": "2025-06-09T20:34:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-007-01",
+        "FileName": "suspect_007_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_007/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-007-02",
+        "FileName": "suspect_007_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_007/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-007-03",
+        "FileName": "suspect_007_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_007/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession with intent to distribute",
+    "PoliceStation": "Divulapitiya Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Active",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0008",
+    "FullName": "Pradeep Rajapaksha",
+    "Alias": "Boss",
+    "Nickname": "Prade",
+    "NIC": "852345678V",
+    "PassportNumber": "N2345678",
+    "DateOfBirth": "1985-02-28",
+    "Address": "No. 61, Ekala, Ja-Ela",
+    "ContactNumber": "074-8606962",
+    "Occupation": "Unemployed",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-05-22",
+    "RecordingOfficer": "SI N. Perera",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 852345678V and passport N2345678.",
+    "CreatedBy": "records_clerk",
+    "CreatedAt": "2025-06-08T12:25:00Z",
+    "UpdateBy": "admin",
+    "UpdatedAt": "2025-06-12T15:25:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-008-01",
+        "FileName": "suspect_008_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_008/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-008-02",
+        "FileName": "suspect_008_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_008/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-008-03",
+        "FileName": "suspect_008_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_008/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Operating narcotic distribution network",
+    "PoliceStation": "Negombo Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Under Investigation",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0009",
+    "FullName": "Tharindu Herath",
+    "Alias": "Runner",
+    "Nickname": "Thari",
+    "NIC": "987120868V",
+    "PassportNumber": "N6682220",
+    "DateOfBirth": "1998-06-12",
+    "Address": "No. 44, Raddolugama Housing Scheme",
+    "ContactNumber": "071-3871230",
+    "Occupation": "Delivery Rider",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-05-25",
+    "RecordingOfficer": "Sgt. R. Fernando",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 987120868V and passport N6682220.",
+    "CreatedBy": "admin",
+    "CreatedAt": "2025-06-09T12:12:00Z",
+    "UpdateBy": "case_officer_01",
+    "UpdatedAt": "2025-06-18T17:12:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-009-01",
+        "FileName": "suspect_009_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_009/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-009-02",
+        "FileName": "suspect_009_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_009/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-009-03",
+        "FileName": "suspect_009_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_009/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Illegal possession of prescription narcotics",
+    "PoliceStation": "Minuwangoda Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Charged",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0010",
+    "FullName": "Isuru Samarasinghe",
+    "Alias": "Shadow",
+    "Nickname": "Izu",
+    "NIC": "955107245V",
+    "PassportNumber": "N6685359",
+    "DateOfBirth": "1995-08-13",
+    "Address": "No. 73, Divulapitiya Road, Minuwangoda",
+    "ContactNumber": "075-1938483",
+    "Occupation": "Street Vendor",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-05-28",
+    "RecordingOfficer": "PC S. Bandara",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 955107245V and passport N6685359.",
+    "CreatedBy": "case_officer_01",
+    "CreatedAt": "2025-06-10T13:29:00Z",
+    "UpdateBy": "case_officer_02",
+    "UpdatedAt": "2025-06-28T14:29:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-010-01",
+        "FileName": "suspect_010_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_010/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-010-02",
+        "FileName": "suspect_010_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_010/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-010-03",
+        "FileName": "suspect_010_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_010/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Aiding narcotic trafficking",
+    "PoliceStation": "Seeduwa Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Convicted",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0011",
+    "FullName": "Nuwan De Silva",
+    "Alias": "Porter",
+    "Nickname": "Nuwa",
+    "NIC": "851538552V",
+    "PassportNumber": "N9376606",
+    "DateOfBirth": "1985-06-13",
+    "Address": "No. 14, Main Street, Negombo",
+    "ContactNumber": "075-4567281",
+    "Occupation": "Construction Worker",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-05-31",
+    "RecordingOfficer": "IP M. Herath",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 851538552V and passport N9376606.",
+    "CreatedBy": "case_officer_02",
+    "CreatedAt": "2025-06-11T12:34:00Z",
+    "UpdateBy": "records_clerk",
+    "UpdatedAt": "2025-06-18T16:34:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-011-01",
+        "FileName": "suspect_011_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_011/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-011-02",
+        "FileName": "suspect_011_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_011/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-011-03",
+        "FileName": "suspect_011_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_011/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession of heroin",
+    "PoliceStation": "Katunayake Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Closed",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0012",
+    "FullName": "Ajith Karunaratne",
+    "Alias": "None",
+    "Nickname": "Aji",
+    "NIC": "989375710V",
+    "PassportNumber": "N7659400",
+    "DateOfBirth": "1998-11-15",
+    "Address": "No. 88, Kimbulapitiya Road, Negombo",
+    "ContactNumber": "078-5408072",
+    "Occupation": "Driver",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-06-03",
+    "RecordingOfficer": "SI K. Silva",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 989375710V and passport N7659400.",
+    "CreatedBy": "records_clerk",
+    "CreatedAt": "2025-06-12T11:46:00Z",
+    "UpdateBy": "admin",
+    "UpdatedAt": "2025-06-17T12:46:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-012-01",
+        "FileName": "suspect_012_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_012/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-012-02",
+        "FileName": "suspect_012_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_012/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-012-03",
+        "FileName": "suspect_012_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_012/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession of cannabis",
+    "PoliceStation": "Kochchikade Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Released",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0013",
+    "FullName": "Gayan Pathirana",
+    "Alias": "Market Boy",
+    "Nickname": "Gaya",
+    "NIC": "199012345678",
+    "PassportNumber": "N3456789",
+    "DateOfBirth": "1990-12-19",
+    "Address": "No. 21, Minuwangoda Road, Minuwangoda",
+    "ContactNumber": "075-4679591",
+    "Occupation": "Fisherman",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-06-06",
+    "RecordingOfficer": "IP D. Wijeratne",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 199012345678 and passport N3456789.",
+    "CreatedBy": "admin",
+    "CreatedAt": "2025-06-13T14:27:00Z",
+    "UpdateBy": "case_officer_01",
+    "UpdatedAt": "2025-07-02T17:27:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-013-01",
+        "FileName": "suspect_013_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_013/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-013-02",
+        "FileName": "suspect_013_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_013/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-013-03",
+        "FileName": "suspect_013_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_013/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Trafficking of narcotic substances",
+    "PoliceStation": "Ja-Ela Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Active",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0014",
+    "FullName": "Mahesh Ekanayake",
+    "Alias": "Captain",
+    "Nickname": "Mahi",
+    "NIC": "199012345678",
+    "PassportNumber": "N3456789",
+    "DateOfBirth": "1990-03-17",
+    "Address": "No. 5, Katunayake Road, Seeduwa",
+    "ContactNumber": "071-3564251",
+    "Occupation": "Three-Wheeler Driver",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-06-09",
+    "RecordingOfficer": "SI N. Perera",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 199012345678 and passport N3456789.",
+    "CreatedBy": "case_officer_01",
+    "CreatedAt": "2025-06-14T13:35:00Z",
+    "UpdateBy": "case_officer_02",
+    "UpdatedAt": "2025-06-16T19:35:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-014-01",
+        "FileName": "suspect_014_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_014/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-014-02",
+        "FileName": "suspect_014_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_014/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-014-03",
+        "FileName": "suspect_014_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_014/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession of methamphetamine",
+    "PoliceStation": "Divulapitiya Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Under Investigation",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0015",
+    "FullName": "Roshan Rathnayake",
+    "Alias": "Driver",
+    "Nickname": "Rosha",
+    "NIC": "983684052V",
+    "PassportNumber": "N9322221",
+    "DateOfBirth": "1998-11-14",
+    "Address": "No. 37, Chilaw Road, Kochchikade",
+    "ContactNumber": "079-8852574",
+    "Occupation": "Shop Assistant",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-06-12",
+    "RecordingOfficer": "Sgt. R. Fernando",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 983684052V and passport N9322221.",
+    "CreatedBy": "case_officer_02",
+    "CreatedAt": "2025-06-15T14:34:00Z",
+    "UpdateBy": "records_clerk",
+    "UpdatedAt": "2025-06-28T17:34:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-015-01",
+        "FileName": "suspect_015_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_015/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-015-02",
+        "FileName": "suspect_015_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_015/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-015-03",
+        "FileName": "suspect_015_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_015/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Distribution of controlled substances",
+    "PoliceStation": "Negombo Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Charged",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0016",
+    "FullName": "Buddhika Perera",
+    "Alias": "Blue Falcon",
+    "Nickname": "Kassa",
+    "NIC": "945218028V",
+    "PassportNumber": "N8320397",
+    "DateOfBirth": "1994-01-22",
+    "Address": "No. 102, Colombo Road, Ja-Ela",
+    "ContactNumber": "074-6707197",
+    "Occupation": "Warehouse Worker",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-06-15",
+    "RecordingOfficer": "PC S. Bandara",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 945218028V and passport N8320397.",
+    "CreatedBy": "records_clerk",
+    "CreatedAt": "2025-06-16T15:37:00Z",
+    "UpdateBy": "admin",
+    "UpdatedAt": "2025-07-04T21:37:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-016-01",
+        "FileName": "suspect_016_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_016/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-016-02",
+        "FileName": "suspect_016_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_016/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-016-03",
+        "FileName": "suspect_016_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_016/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Narcotic smuggling attempt",
+    "PoliceStation": "Minuwangoda Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Convicted",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0017",
+    "FullName": "Manoj Fernando",
+    "Alias": "Night Rider",
+    "Nickname": "Nima",
+    "NIC": "815924115V",
+    "PassportNumber": "N7823537",
+    "DateOfBirth": "1981-03-15",
+    "Address": "No. 9, Kurana, Negombo",
+    "ContactNumber": "072-9517485",
+    "Occupation": "Mechanic",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-06-18",
+    "RecordingOfficer": "IP M. Herath",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 815924115V and passport N7823537.",
+    "CreatedBy": "admin",
+    "CreatedAt": "2025-06-17T11:16:00Z",
+    "UpdateBy": "case_officer_01",
+    "UpdatedAt": "2025-06-26T15:16:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-017-01",
+        "FileName": "suspect_017_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_017/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-017-02",
+        "FileName": "suspect_017_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_017/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-017-03",
+        "FileName": "suspect_017_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_017/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession with intent to distribute",
+    "PoliceStation": "Seeduwa Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Closed",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0018",
+    "FullName": "Sajith Silva",
+    "Alias": "Kalu Malli",
+    "Nickname": "Sama",
+    "NIC": "816007072V",
+    "PassportNumber": "N9530217",
+    "DateOfBirth": "1981-11-17",
+    "Address": "No. 61, Ekala, Ja-Ela",
+    "ContactNumber": "072-9897858",
+    "Occupation": "Port Laborer",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-06-21",
+    "RecordingOfficer": "SI K. Silva",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 816007072V and passport N9530217.",
+    "CreatedBy": "case_officer_01",
+    "CreatedAt": "2025-06-18T14:42:00Z",
+    "UpdateBy": "case_officer_02",
+    "UpdatedAt": "2025-06-23T16:42:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-018-01",
+        "FileName": "suspect_018_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_018/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-018-02",
+        "FileName": "suspect_018_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_018/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-018-03",
+        "FileName": "suspect_018_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_018/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Operating narcotic distribution network",
+    "PoliceStation": "Katunayake Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Released",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0019",
+    "FullName": "Ravindu Jayasinghe",
+    "Alias": "Dock Man",
+    "Nickname": "Lahi",
+    "NIC": "881112223V",
+    "PassportNumber": "N4567890",
+    "DateOfBirth": "1988-01-20",
+    "Address": "No. 44, Raddolugama Housing Scheme",
+    "ContactNumber": "075-6159230",
+    "Occupation": "Unemployed",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-06-24",
+    "RecordingOfficer": "IP D. Wijeratne",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 881112223V and passport N4567890.",
+    "CreatedBy": "case_officer_02",
+    "CreatedAt": "2025-06-19T13:01:00Z",
+    "UpdateBy": "records_clerk",
+    "UpdatedAt": "2025-06-20T13:01:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-019-01",
+        "FileName": "suspect_019_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_019/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-019-02",
+        "FileName": "suspect_019_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_019/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-019-03",
+        "FileName": "suspect_019_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_019/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Illegal possession of prescription narcotics",
+    "PoliceStation": "Kochchikade Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Active",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0020",
+    "FullName": "Harsha Gunasekara",
+    "Alias": "Courier",
+    "Nickname": "Chami",
+    "NIC": "881112223V",
+    "PassportNumber": "N4567890",
+    "DateOfBirth": "1988-04-02",
+    "Address": "No. 73, Divulapitiya Road, Minuwangoda",
+    "ContactNumber": "071-9153566",
+    "Occupation": "Delivery Rider",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-06-27",
+    "RecordingOfficer": "SI N. Perera",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 881112223V and passport N4567890.",
+    "CreatedBy": "records_clerk",
+    "CreatedAt": "2025-06-20T12:26:00Z",
+    "UpdateBy": "admin",
+    "UpdatedAt": "2025-07-09T12:26:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-020-01",
+        "FileName": "suspect_020_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_020/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-020-02",
+        "FileName": "suspect_020_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_020/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-020-03",
+        "FileName": "suspect_020_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_020/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Aiding narcotic trafficking",
+    "PoliceStation": "Ja-Ela Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Under Investigation",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0021",
+    "FullName": "Dilshan Bandara",
+    "Alias": "Lucky",
+    "Nickname": "Ruwa",
+    "NIC": "809937326V",
+    "PassportNumber": "N9212142",
+    "DateOfBirth": "1980-03-05",
+    "Address": "No. 14, Main Street, Negombo",
+    "ContactNumber": "074-9852897",
+    "Occupation": "Street Vendor",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-06-30",
+    "RecordingOfficer": "Sgt. R. Fernando",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 809937326V and passport N9212142.",
+    "CreatedBy": "admin",
+    "CreatedAt": "2025-06-21T16:00:00Z",
+    "UpdateBy": "case_officer_01",
+    "UpdatedAt": "2025-07-09T17:00:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-021-01",
+        "FileName": "suspect_021_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_021/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-021-02",
+        "FileName": "suspect_021_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_021/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-021-03",
+        "FileName": "suspect_021_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_021/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession of heroin",
+    "PoliceStation": "Divulapitiya Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Charged",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0022",
+    "FullName": "Kamal Wijesinghe",
+    "Alias": "Raja",
+    "Nickname": "Dina",
+    "NIC": "978099076V",
+    "PassportNumber": "N6888346",
+    "DateOfBirth": "1997-09-25",
+    "Address": "No. 88, Kimbulapitiya Road, Negombo",
+    "ContactNumber": "074-7693979",
+    "Occupation": "Construction Worker",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-07-03",
+    "RecordingOfficer": "PC S. Bandara",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 978099076V and passport N6888346.",
+    "CreatedBy": "case_officer_01",
+    "CreatedAt": "2025-06-22T16:14:00Z",
+    "UpdateBy": "case_officer_02",
+    "UpdatedAt": "2025-06-29T21:14:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-022-01",
+        "FileName": "suspect_022_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_022/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-022-02",
+        "FileName": "suspect_022_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_022/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-022-03",
+        "FileName": "suspect_022_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_022/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession of cannabis",
+    "PoliceStation": "Negombo Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Convicted",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0023",
+    "FullName": "Janaka Rajapaksha",
+    "Alias": "Boss",
+    "Nickname": "Prade",
+    "NIC": "997264956V",
+    "PassportNumber": "N7837524",
+    "DateOfBirth": "1999-09-15",
+    "Address": "No. 21, Minuwangoda Road, Minuwangoda",
+    "ContactNumber": "075-1352896",
+    "Occupation": "Driver",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-07-06",
+    "RecordingOfficer": "IP M. Herath",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 997264956V and passport N7837524.",
+    "CreatedBy": "case_officer_02",
+    "CreatedAt": "2025-06-23T10:45:00Z",
+    "UpdateBy": "records_clerk",
+    "UpdatedAt": "2025-07-01T10:45:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-023-01",
+        "FileName": "suspect_023_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_023/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-023-02",
+        "FileName": "suspect_023_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_023/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-023-03",
+        "FileName": "suspect_023_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_023/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Trafficking of narcotic substances",
+    "PoliceStation": "Minuwangoda Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Closed",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0024",
+    "FullName": "Supun Herath",
+    "Alias": "Runner",
+    "Nickname": "Thari",
+    "NIC": "964860684V",
+    "PassportNumber": "N8468096",
+    "DateOfBirth": "1996-04-01",
+    "Address": "No. 5, Katunayake Road, Seeduwa",
+    "ContactNumber": "071-1527021",
+    "Occupation": "Fisherman",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-07-09",
+    "RecordingOfficer": "SI K. Silva",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 964860684V and passport N8468096.",
+    "CreatedBy": "records_clerk",
+    "CreatedAt": "2025-06-24T11:15:00Z",
+    "UpdateBy": "admin",
+    "UpdatedAt": "2025-06-26T12:15:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-024-01",
+        "FileName": "suspect_024_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_024/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-024-02",
+        "FileName": "suspect_024_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_024/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-024-03",
+        "FileName": "suspect_024_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_024/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession of methamphetamine",
+    "PoliceStation": "Seeduwa Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Released",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0025",
+    "FullName": "Chathura Samarasinghe",
+    "Alias": "Shadow",
+    "Nickname": "Izu",
+    "NIC": "197934567890",
+    "PassportNumber": "N5678901",
+    "DateOfBirth": "1979-06-03",
+    "Address": "No. 37, Chilaw Road, Kochchikade",
+    "ContactNumber": "077-4594297",
+    "Occupation": "Three-Wheeler Driver",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-07-12",
+    "RecordingOfficer": "IP D. Wijeratne",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 197934567890 and passport N5678901.",
+    "CreatedBy": "admin",
+    "CreatedAt": "2025-06-25T14:45:00Z",
+    "UpdateBy": "case_officer_01",
+    "UpdatedAt": "2025-07-04T19:45:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-025-01",
+        "FileName": "suspect_025_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_025/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-025-02",
+        "FileName": "suspect_025_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_025/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-025-03",
+        "FileName": "suspect_025_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_025/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Distribution of controlled substances",
+    "PoliceStation": "Katunayake Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Active",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0026",
+    "FullName": "Madhushan De Silva",
+    "Alias": "Porter",
+    "Nickname": "Nuwa",
+    "NIC": "197934567890",
+    "PassportNumber": "N5678901",
+    "DateOfBirth": "1979-09-05",
+    "Address": "No. 102, Colombo Road, Ja-Ela",
+    "ContactNumber": "077-5076817",
+    "Occupation": "Shop Assistant",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-07-15",
+    "RecordingOfficer": "SI N. Perera",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 197934567890 and passport N5678901.",
+    "CreatedBy": "case_officer_01",
+    "CreatedAt": "2025-06-26T16:29:00Z",
+    "UpdateBy": "case_officer_02",
+    "UpdatedAt": "2025-07-15T20:29:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-026-01",
+        "FileName": "suspect_026_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_026/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-026-02",
+        "FileName": "suspect_026_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_026/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-026-03",
+        "FileName": "suspect_026_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_026/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Narcotic smuggling attempt",
+    "PoliceStation": "Kochchikade Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Under Investigation",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0027",
+    "FullName": "Sameera Karunaratne",
+    "Alias": "None",
+    "Nickname": "Aji",
+    "NIC": "937829332V",
+    "PassportNumber": "N6798637",
+    "DateOfBirth": "1993-02-04",
+    "Address": "No. 9, Kurana, Negombo",
+    "ContactNumber": "076-8835373",
+    "Occupation": "Warehouse Worker",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-07-18",
+    "RecordingOfficer": "Sgt. R. Fernando",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 937829332V and passport N6798637.",
+    "CreatedBy": "case_officer_02",
+    "CreatedAt": "2025-06-27T15:57:00Z",
+    "UpdateBy": "records_clerk",
+    "UpdatedAt": "2025-07-09T18:57:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-027-01",
+        "FileName": "suspect_027_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_027/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-027-02",
+        "FileName": "suspect_027_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_027/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-027-03",
+        "FileName": "suspect_027_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_027/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Possession with intent to distribute",
+    "PoliceStation": "Ja-Ela Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Charged",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0028",
+    "FullName": "Lakmal Pathirana",
+    "Alias": "Market Boy",
+    "Nickname": "Gaya",
+    "NIC": "200117270733",
+    "PassportNumber": "N8824295",
+    "DateOfBirth": "2001-11-21",
+    "Address": "No. 61, Ekala, Ja-Ela",
+    "ContactNumber": "075-2833230",
+    "Occupation": "Mechanic",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-07-21",
+    "RecordingOfficer": "PC S. Bandara",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 200117270733 and passport N8824295.",
+    "CreatedBy": "records_clerk",
+    "CreatedAt": "2025-06-28T10:33:00Z",
+    "UpdateBy": "admin",
+    "UpdatedAt": "2025-07-11T15:33:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-028-01",
+        "FileName": "suspect_028_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_028/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-028-02",
+        "FileName": "suspect_028_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_028/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-028-03",
+        "FileName": "suspect_028_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_028/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Operating narcotic distribution network",
+    "PoliceStation": "Divulapitiya Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Convicted",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0029",
+    "FullName": "Amila Ekanayake",
+    "Alias": "Captain",
+    "Nickname": "Mahi",
+    "NIC": "854214348V",
+    "PassportNumber": "N6797793",
+    "DateOfBirth": "1985-09-15",
+    "Address": "No. 44, Raddolugama Housing Scheme",
+    "ContactNumber": "077-5191056",
+    "Occupation": "Port Laborer",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-07-24",
+    "RecordingOfficer": "IP M. Herath",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 854214348V and passport N6797793.",
+    "CreatedBy": "admin",
+    "CreatedAt": "2025-06-29T11:57:00Z",
+    "UpdateBy": "case_officer_01",
+    "UpdatedAt": "2025-07-05T13:57:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-029-01",
+        "FileName": "suspect_029_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_029/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-029-02",
+        "FileName": "suspect_029_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_029/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-029-03",
+        "FileName": "suspect_029_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_029/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Illegal possession of prescription narcotics",
+    "PoliceStation": "Negombo Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-NEG-001",
+      "Court": "Negombo Court"
+    },
+    "Status": "Closed",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  },
+  {
+    "CaseNumber": "NCB-2025-0030",
+    "FullName": "Shehan Rathnayake",
+    "Alias": "Driver",
+    "Nickname": "Rosha",
+    "NIC": "808434500V",
+    "PassportNumber": "N9389090",
+    "DateOfBirth": "1980-09-04",
+    "Address": "No. 73, Divulapitiya Road, Minuwangoda",
+    "ContactNumber": "070-2564689",
+    "Occupation": "Unemployed",
+    "Nationality": "Sri Lankan",
+    "Photograph": "assets/user.png",
+    "DateRecorded": "2025-07-27",
+    "RecordingOfficer": "SI K. Silva",
+    "Notes": "Demo record for narcotic-related case. Linked identity check enabled for NIC 808434500V and passport N9389090.",
+    "CreatedBy": "case_officer_01",
+    "CreatedAt": "2025-06-30T11:11:00Z",
+    "UpdateBy": "case_officer_02",
+    "UpdatedAt": "2025-07-18T17:11:00Z",
+    "Attachments": [
+      {
+        "AttachmentId": "ATT-030-01",
+        "FileName": "suspect_030_statement.pdf",
+        "FileType": "PDF",
+        "MimeType": "application/pdf",
+        "FilePath": "/uploads/suspects/suspect_030/statement.pdf",
+        "Description": "Recorded statement document"
+      },
+      {
+        "AttachmentId": "ATT-030-02",
+        "FileName": "suspect_030_nic_scan.jpg",
+        "FileType": "Scanned Doc",
+        "MimeType": "image/jpeg",
+        "FilePath": "/uploads/suspects/suspect_030/nic_scan.jpg",
+        "Description": "Scanned identification document"
+      },
+      {
+        "AttachmentId": "ATT-030-03",
+        "FileName": "suspect_030_evidence_photo.png",
+        "FileType": "Image",
+        "MimeType": "image/png",
+        "FilePath": "/uploads/suspects/suspect_030/evidence_photo.png",
+        "Description": "Evidence related photograph"
+      }
+    ],
+    "OffenceType": "Aiding narcotic trafficking",
+    "PoliceStation": "Minuwangoda Police Station",
+    "CourtDetails": {
+      "CourtId": "CRT-MIN-001",
+      "Court": "Minuwangoda Court"
+    },
+    "Status": "Released",
+    "Remarks": "Sample demo data only. Not based on a real person or case."
+  }
+]

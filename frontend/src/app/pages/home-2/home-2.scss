@@ -1,3 +1,7 @@
+/* ── Reset (add to styles.scss / app.scss if not already there) ──
+   html, body { margin: 0; padding: 0; height: 100%; }
+   ────────────────────────────────────────────────────────────── */
+
 /* ── Page shell ── */
 .page {
   min-height: 100vh;
@@ -164,7 +168,7 @@
   &:hover { text-decoration: underline; }
 }
 
-/* ── Action grid — 2x2 for 4 cards ── */
+/* ── Action cards ── */
 .action-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -182,14 +186,12 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: clamp(150px, 18vw, 190px);
+  min-height: clamp(150px, 18vw, 200px);
   transition: border-color 0.15s, background 0.15s, transform 0.12s;
   animation: fadeUp 0.4s ease both;
 
-  &:nth-child(1) { animation-delay: 0.20s; }
-  &:nth-child(2) { animation-delay: 0.27s; }
-  &:nth-child(3) { animation-delay: 0.34s; }
-  &:nth-child(4) { animation-delay: 0.41s; }
+  &:nth-child(1) { animation-delay: 0.25s; }
+  &:nth-child(2) { animation-delay: 0.32s; }
 
   &:hover {
     border-color: var(--border-md);
@@ -199,48 +201,41 @@
 
   &:active { transform: translateY(0); }
 
+  &.add .action-icon {
+    background: var(--navy-50);
+    color: var(--navy-600);
+  }
+
+  &.view .action-icon {
+    background: var(--surface-2);
+    color: var(--text-2);
+    border: 1px solid var(--border);
+  }
+
   &:hover .action-arrow {
     transform: translateX(4px);
     color: var(--text-2);
   }
 }
 
-/* ── Icon variants ── */
 .action-icon {
-  width: clamp(36px, 4vw, 46px);
-  height: clamp(36px, 4vw, 46px);
+  width: clamp(36px, 4vw, 48px);
+  height: clamp(36px, 4vw, 48px);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(18px, 2vw, 22px);
-}
-
-.icon-blue   { background: var(--navy-50);  color: var(--navy-600); }
-.icon-amber  { background: var(--amber-bg); color: var(--amber-600); }
-.icon-purple { background: #EDE9FE;          color: #5B21B6; }
-.icon-green  { background: var(--green-bg); color: var(--green-600); }
-
-@media (prefers-color-scheme: dark) {
-  .icon-amber  { background: rgba(186,117,23,0.15); color: #FAC775; }
-  .icon-purple { background: rgba(91,33,182,0.2);   color: #C4B5FD; }
-  .icon-green  { background: rgba(59,109,17,0.15);  color: #97C459; }
-}
-
-[data-theme="dark"] {
-  .icon-amber  { background: rgba(186,117,23,0.15); color: #FAC775; }
-  .icon-purple { background: rgba(91,33,182,0.2);   color: #C4B5FD; }
-  .icon-green  { background: rgba(59,109,17,0.15);  color: #97C459; }
+  font-size: clamp(18px, 2vw, 24px);
 }
 
 .action-title {
-  font-size: clamp(14px, 1.4vw, 16px);
+  font-size: clamp(14px, 1.4vw, 17px);
   font-weight: 500;
   color: var(--text-1);
 }
 
 .action-desc {
-  font-size: clamp(12px, 1.1vw, 13px);
+  font-size: clamp(12px, 1.1vw, 14px);
   color: var(--text-2);
   line-height: 1.65;
   flex: 1;
@@ -253,30 +248,20 @@
   margin-top: 4px;
 }
 
-/* ── Tag pill variants ── */
 .action-tag {
   font-size: clamp(10px, 0.9vw, 11px);
   font-weight: 500;
   padding: 3px 10px;
   border-radius: 999px;
+  background: var(--navy-50);
+  color: var(--navy-600);
   letter-spacing: 0.03em;
-}
 
-.tag-blue   { background: var(--navy-50);  color: var(--navy-600); }
-.tag-amber  { background: var(--amber-bg); color: var(--amber-600); }
-.tag-purple { background: #EDE9FE;          color: #5B21B6; }
-.tag-green  { background: var(--green-bg); color: var(--green-600); }
-
-@media (prefers-color-scheme: dark) {
-  .tag-amber  { background: rgba(186,117,23,0.15); color: #FAC775; }
-  .tag-purple { background: rgba(91,33,182,0.2);   color: #C4B5FD; }
-  .tag-green  { background: rgba(59,109,17,0.15);  color: #97C459; }
-}
-
-[data-theme="dark"] {
-  .tag-amber  { background: rgba(186,117,23,0.15); color: #FAC775; }
-  .tag-purple { background: rgba(91,33,182,0.2);   color: #C4B5FD; }
-  .tag-green  { background: rgba(59,109,17,0.15);  color: #97C459; }
+  .action-card.view & {
+    background: var(--surface-2);
+    color: var(--text-3);
+    border: 1px solid var(--border);
+  }
 }
 
 .action-arrow {
@@ -293,7 +278,7 @@
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
-  animation: fadeUp 0.4s 0.48s ease both;
+  animation: fadeUp 0.4s 0.38s ease both;
 }
 
 .activity-row {
@@ -317,10 +302,12 @@
   &.new    { background: var(--dot-new); }
   &.update { background: var(--dot-update); }
   &.closed { background: var(--dot-closed); }
-  &.admin  { background: #7C3AED; }
 }
 
-.act-main { flex: 1; min-width: 0; }
+.act-main {
+  flex: 1;
+  min-width: 0;
+}
 
 .act-title {
   font-size: clamp(12px, 1.1vw, 14px);
@@ -353,11 +340,14 @@
 }
 
 /* ── Breakpoints ── */
+
+/* Tablet: 2-col stats, stack actions */
 @media (max-width: 900px) {
-  .stat-grid   { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .action-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-grid    { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .action-grid  { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* Mobile: single column everything */
 @media (max-width: 560px) {
   .stat-grid    { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .action-grid  { grid-template-columns: 1fr; }

@@ -1,1 +1,218 @@
-<p>suspect-add works!</p>
+<app-breadcrumb />
+<section class="suspect-add-page">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Suspect Records</p>
+      <h1>Add New Suspect</h1>
+    </div>
+
+    <div class="case-number-card">
+      <span>Auto Generated Case No</span>
+      <strong>{{ suspectForm.get('CaseNumber')?.value }}</strong>
+    </div>
+  </header>
+
+  <form class="suspect-form" [formGroup]="suspectForm" (ngSubmit)="submitForm()">
+    <section class="form-card">
+      <h2>Identity Details</h2>
+
+      <div class="form-grid">
+        <label class="form-field">
+          <span>Full Name</span>
+          <input type="text" formControlName="FullName" />
+          <small *ngIf="isInvalid('FullName')">Full name is required.</small>
+        </label>
+
+        <label class="form-field">
+          <span>Alias</span>
+          <input type="text" formControlName="Alias" />
+        </label>
+
+        <label class="form-field">
+          <span>Nickname</span>
+          <input type="text" formControlName="Nickname" />
+        </label>
+
+        <label class="form-field">
+          <span>NIC</span>
+          <input type="text" formControlName="NIC" placeholder="900123456V or 199012345678" />
+          <small *ngIf="isInvalid('NIC')">Enter a valid Sri Lankan NIC.</small>
+        </label>
+
+        <label class="form-field">
+          <span>Passport Number</span>
+          <input type="text" formControlName="PassportNumber" />
+          <small *ngIf="isInvalid('PassportNumber')">Passport number must be at least 6 characters.</small>
+        </label>
+
+        <label class="form-field">
+          <span>Photograph</span>
+          <input type="file" accept="image/*" (change)="onPhotoSelected($event)" />
+          <small class="file-name" *ngIf="selectedPhotoFile">
+            Selected: {{ selectedPhotoFile.name }}
+          </small>
+        </label>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <h2>Contact & Personal Details</h2>
+
+      <div class="form-grid">
+        <label class="form-field">
+          <span>Date of Birth</span>
+          <input type="date" formControlName="DateOfBirth" />
+          <small *ngIf="isInvalid('DateOfBirth')">Date of birth is required and cannot be future.</small>
+        </label>
+
+        <label class="form-field">
+          <span>Contact Number</span>
+          <input type="text" formControlName="ContactNumber" placeholder="0712345678 or +94712345678" />
+          <small *ngIf="isInvalid('ContactNumber')">Enter a valid contact number.</small>
+        </label>
+
+        <label class="form-field">
+          <span>Occupation</span>
+          <input type="text" formControlName="Occupation" />
+        </label>
+
+        <label class="form-field">
+          <span>Nationality</span>
+          <input type="text" formControlName="Nationality" />
+          <small *ngIf="isInvalid('Nationality')">Nationality is required.</small>
+        </label>
+
+        <label class="form-field form-field-wide">
+          <span>Address</span>
+          <textarea rows="3" formControlName="Address"></textarea>
+        </label>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <h2>Case Details</h2>
+
+      <div class="form-grid">
+        <label class="form-field">
+          <span>Date Recorded</span>
+          <input type="date" formControlName="DateRecorded" />
+          <small *ngIf="isInvalid('DateRecorded')">Recorded date is required and cannot be future.</small>
+        </label>
+
+        <label class="form-field">
+          <span>Recording Officer</span>
+          <input type="text" formControlName="RecordingOfficer" />
+          <small *ngIf="isInvalid('RecordingOfficer')">Recording officer is required.</small>
+        </label>
+
+        <label class="form-field">
+          <span>Offence Type</span>
+          <select formControlName="OffenceType">
+            <option value="">Select offence</option>
+            <option *ngFor="let offence of offenceTypes" [value]="offence">{{ offence }}</option>
+          </select>
+          <small *ngIf="isInvalid('OffenceType')">Offence type is required.</small>
+        </label>
+
+        <label class="form-field">
+          <span>Police Station</span>
+          <select formControlName="PoliceStation">
+            <option value="">Select police station</option>
+            <option *ngFor="let station of policeStations" [value]="station">{{ station }}</option>
+          </select>
+          <small *ngIf="isInvalid('PoliceStation')">Police station is required.</small>
+        </label>
+
+        <label class="form-field">
+          <span>Status</span>
+          <select formControlName="Status">
+            <option value="">Select status</option>
+            <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+          </select>
+          <small *ngIf="isInvalid('Status')">Status is required.</small>
+        </label>
+      </div>
+    </section>
+
+    <section class="form-card" formGroupName="CourtDetails">
+      <h2>Court Details</h2>
+
+      <div class="form-grid">
+        <label class="form-field">
+          <span>Court</span>
+          <select formControlName="CourtId" (change)="onCourtChange()">
+            <option value="">Select court</option>
+            <option *ngFor="let court of courts" [value]="court.CourtId">
+              {{ court.CourtId }} / {{ court.Court }}
+            </option>
+          </select>
+          <small *ngIf="isInvalid('CourtDetails.CourtId')">Court is required.</small>
+        </label>
+
+        <label class="form-field">
+          <span>Court Name</span>
+          <input type="text" formControlName="Court" readonly />
+          <small *ngIf="isInvalid('CourtDetails.Court')">Court name is required.</small>
+        </label>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <div class="section-header">
+        <h2>Attachments</h2>
+        <button class="secondary-button" type="button" (click)="addAttachment()">Add Attachment</button>
+      </div>
+
+      <div class="attachments" formArrayName="Attachments">
+        <div
+          class="attachment-card"
+          *ngFor="let attachment of attachments.controls; let index = index"
+          [formGroupName]="index"
+        >
+          <div class="attachment-header">
+            <h3>Attachment {{ index + 1 }}</h3>
+            <button class="icon-button" type="button" (click)="removeAttachment(index)">Remove</button>
+          </div>
+
+          <div class="form-grid">
+            <!-- <label class="form-field">
+              <span>Attachment ID</span>
+              <input type="text" formControlName="AttachmentId" readonly />
+            </label> -->
+
+            <label class="form-field attachment-upload-field">
+              <span>Upload File</span>
+              <input type="file" accept=".pdf,image/*" (change)="onAttachmentSelected($event, index)" />
+              <small class="file-name" *ngIf="attachments.at(index).get('FileName')?.value">
+                Selected: {{ attachments.at(index).get('FileName')?.value }}
+              </small>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <h2>Notes & Remarks</h2>
+
+      <div class="form-grid">
+        <label class="form-field form-field-wide">
+          <span>Notes</span>
+          <textarea rows="4" formControlName="Notes"></textarea>
+        </label>
+
+        <label class="form-field form-field-wide">
+          <span>Remarks</span>
+          <textarea rows="4" formControlName="Remarks"></textarea>
+        </label>
+      </div>
+    </section>
+
+    <p class="success-message" *ngIf="successMessage">{{ successMessage }}</p>
+
+    <div class="form-actions">
+      <button class="reset-button" type="button" (click)="resetForm()">Reset</button>
+      <button class="save-button" type="submit">Save Suspect</button>
+    </div>
+  </form>
+</section>
