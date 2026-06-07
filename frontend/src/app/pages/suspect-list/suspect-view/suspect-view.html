@@ -16,6 +16,10 @@
       <div class="actions">
         <button class="secondary-button" type="button" (click)="backToList()">Back</button>
         <button class="primary-button" type="button" *ngIf="!editMode" (click)="enableEdit()">Update</button>
+        <button class="secondary-button report-button" type="button" *ngIf="!editMode">
+          <i class="ti ti-file-report" aria-hidden="true"></i>
+          Generate Suspect Report
+        </button>
         <button class="danger-button" type="button" *ngIf="!editMode" (click)="deleteSuspect()">Delete</button>
         <button class="primary-button" type="button" *ngIf="editMode" (click)="saveUpdate()">Save Changes</button>
         <button class="secondary-button" type="button" *ngIf="editMode" (click)="cancelEdit()">Cancel</button>
