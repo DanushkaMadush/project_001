@@ -9,15 +9,18 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { Breadcrumb } from "../../../layout/breadcrumb/breadcrumb";
+import { BreadcrumbService } from '../../../services/breadcrumb';
 
 @Component({
   selector: 'app-suspect-add',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, Breadcrumb],
   templateUrl: './suspect-add.component.html',
   styleUrl: './suspect-add.component.scss',
 })
 export class SuspectAddComponent {
   private fb = inject(FormBuilder);
+  private bc = inject(BreadcrumbService);
   private readonly currentUser = 'admin';
 
   selectedPhotoFile: File | null = null;
@@ -81,6 +84,14 @@ export class SuspectAddComponent {
   get attachments(): FormArray {
     return this.suspectForm.get('Attachments') as FormArray;
   }
+
+    ngOnInit(): void {
+        this.bc.set([
+      { label: 'Home',         path: '/home2' },
+      { label: 'Add New Suspect' }               // no path = current page
+    ]);
+  }
+
 
   addAttachment(): void {
     this.attachments.push(this.createAttachmentGroup(this.attachments.length));
