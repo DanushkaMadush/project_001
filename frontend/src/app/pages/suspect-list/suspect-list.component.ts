@@ -12,38 +12,92 @@ import { CommonModule } from '@angular/common';
 export class SuspectListComponent {
   suspects: any[] = [];
   filteredSuspects: any[] = [];
+  offenceTypes: string[] = [];
+  policeStations: string[] = [];
 
   searchText = '';
+  selectedOffenceType = '';
+  selectedPoliceStation = '';
+  selectedDate = '';
 
   constructor(private suspectsService: SuspectsService) {}
 
   ngOnInit(): void {
     this.suspects = this.suspectsService.getSuspects();
-    this.filteredSuspects = this.suspects;
+    this.offenceTypes = this.getUniqueValues('OffenceType');
+    this.policeStations = this.getUniqueValues('PoliceStation');
+    this.applyFilters();
   }
 
   search(value: string): void {
     this.searchText = value;
+    this.applyFilters();
+  }
 
-    const term = value.toLowerCase().trim();
+  filterByOffenceType(value: string): void {
+    this.selectedOffenceType = value;
+    this.applyFilters();
+  }
 
-    if (!term) {
-      this.filteredSuspects = this.suspects;
-      return;
-    }
+  filterByPoliceStation(value: string): void {
+    this.selectedPoliceStation = value;
+    this.applyFilters();
+  }
 
-    this.filteredSuspects = this.suspects.filter((suspect) =>
-      suspect['Full Name']?.toLowerCase().includes(term) ||
-      suspect['Case Number']?.toLowerCase().includes(term) ||
-      suspect.NIC?.toLowerCase().includes(term) ||
-      suspect.PassportNumber?.toLowerCase().includes(term) ||
-      suspect.Alias?.toLowerCase().includes(term) ||
-      suspect['offence type']?.toLowerCase().includes(term) ||
-      suspect['police station']?.toLowerCase().includes(term)
-    );
+  filterByDate(value: string): void {
+    this.selectedDate = value;
+    this.applyFilters();
+  }
+
+  resetFilters(): void {
+    this.searchText = '';
+    this.selectedOffenceType = '';
+    this.selectedPoliceStation = '';
+    this.selectedDate = '';
+    this.applyFilters();
+  }
+
+  private applyFilters(): void {
+    const term = this.searchText.toLowerCase().trim();
+
+    this.filteredSuspects = this.suspects.filter((suspect) => {
+      const searchableText = [
+        suspect.FullName,
+        suspect.CaseNumber,
+        suspect.NIC,
+        suspect.PassportNumber,
+        suspect.Alias,
+        suspect.OffenceType,
+        suspect.PoliceStation,
+        suspect.RecordingOfficer,
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+
+      const matchesSearch = !term || searchableText.includes(term);
+      const matchesOffence =
+        !this.selectedOffenceType || suspect.OffenceType === this.selectedOffenceType;
+      const matchesStation =
+        !this.selectedPoliceStation || suspect.PoliceStation === this.selectedPoliceStation;
+      const matchesDate =
+        !this.selectedDate || suspect.DateRecorded === this.selectedDate;
+
+      return matchesSearch && matchesOffence && matchesStation && matchesDate;
+    });
+  }
+
+  private getUniqueValues(key: string): string[] {
+    return Array.from(
+      new Set(
+        this.suspects
+          .map((suspect) => suspect[key])
+          .filter((value): value is string => Boolean(value))
+      )
+    ).sort((first, second) => first.localeCompare(second));
   }
 
   trackByCaseNumber(index: number, suspect: any): string {
-    return suspect['Case Number'];
+    return suspect.CaseNumber;
   }
 }
