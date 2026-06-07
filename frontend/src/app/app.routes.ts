@@ -8,6 +8,8 @@ import { SuspectAddComponent } from './pages/suspect-list/suspect-add/suspect-ad
 import { SuspectUpdateComponent } from './pages/suspect-list/suspect-update/suspect-update.component';
 import { SuspectViewComponent } from './pages/suspect-list/suspect-view/suspect-view';
 import { Home2 } from './pages/home-2/home-2';
+import { ActivityLogComponent } from './pages/activity-log/activity-log.component';
+import { ActivityLogViewComponent } from './pages/activity-log-view/activity-log-view.component';
 
 export const routes: Routes = [
   {
@@ -29,6 +31,16 @@ export const routes: Routes = [
   {
     path: 'home2',
     component: Home2
+  },
+
+  {
+    path: 'activity-log',
+    component: ActivityLogComponent
+  },
+
+  {
+    path: 'activity-log/:id',
+    component: ActivityLogViewComponent
   },
 
   {
