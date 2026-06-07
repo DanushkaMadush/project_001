@@ -63,7 +63,15 @@
     </div>
 
     <div class="suspect-grid" *ngIf="filteredSuspects.length > 0">
-        <app-suspect-card *ngFor="let suspect of filteredSuspects; trackBy: trackByCaseNumber" [suspect]="suspect">
+        <app-suspect-card
+            class="suspect-card-link"
+            role="button"
+            tabindex="0"
+            *ngFor="let suspect of filteredSuspects; trackBy: trackByCaseNumber"
+            [suspect]="suspect"
+            (click)="viewSuspect(suspect.CaseNumber)"
+            (keydown.enter)="viewSuspect(suspect.CaseNumber)"
+            (keydown.space)="viewSuspect(suspect.CaseNumber); $event.preventDefault()">
         </app-suspect-card>
     </div>
 </section>
