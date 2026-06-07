@@ -1,0 +1,81 @@
+<article class="suspect-card">
+  <div class="card-top">
+    <img
+      class="photo"
+      [src]="suspect.Photograph"
+      [alt]="suspect['Full Name']"
+    />
+
+    <div class="main-info">
+      <div class="title-row">
+        <h3>{{ suspect['Full Name'] }}</h3>
+        <span class="status" [ngClass]="statusClass">
+          {{ suspect.status }}
+        </span>
+      </div>
+
+      <p class="alias">
+        {{ suspect.Alias || 'No alias' }}
+        <span *ngIf="suspect.Nickname">• {{ suspect.Nickname }}</span>
+      </p>
+
+      <p class="case">
+        Case No:
+        <strong>{{ suspect['Case Number'] }}</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="details-grid">
+    <div>
+      <span>NIC</span>
+      <strong>{{ suspect.NIC }}</strong>
+    </div>
+
+    <div>
+      <span>Passport</span>
+      <strong>{{ suspect.PassportNumber }}</strong>
+    </div>
+
+    <div>
+      <span>Offence</span>
+      <strong>{{ suspect['offence type'] }}</strong>
+    </div>
+
+    <div>
+      <span>Police Station</span>
+      <strong>{{ suspect['police station'] }}</strong>
+    </div>
+
+    <div>
+      <span>Court</span>
+      <strong>{{ suspect['court details']?.court }}</strong>
+    </div>
+
+    <div>
+      <span>Recorded</span>
+      <strong>{{ suspect['Date Recorded'] }}</strong>
+    </div>
+  </div>
+
+  <div class="notes" *ngIf="suspect.Notes">
+    {{ suspect.Notes }}
+  </div>
+
+  <div class="card-footer">
+    <div class="officer">
+      Officer:
+      <strong>{{ suspect['Recording Officer'] }}</strong>
+    </div>
+
+    <div class="files" *ngIf="suspect['Attachments(PDF,Scanned Docs,Images)']?.length">
+      <button
+        type="button"
+        *ngFor="let file of suspect['Attachments(PDF,Scanned Docs,Images)']"
+        (click)="openFile(file.filePath)"
+      >
+        {{ file.type }}
+      </button>
+    </div>
+  </div>
+</article>
