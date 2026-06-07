@@ -1,81 +1,61 @@
 <article class="suspect-card">
-  <div class="card-top">
-    <img
-      class="photo"
-      [src]="suspect.Photograph"
-      [alt]="suspect['Full Name']"
-    />
+  <header class="card-header">
+    <div class="photo-frame">
+      <img
+        class="photo"
+        [src]="suspect.Photograph"
+        [alt]="suspect.FullName"
+      />
+    </div>
 
     <div class="main-info">
       <div class="title-row">
-        <h3>{{ suspect['Full Name'] }}</h3>
+        <h3>{{ suspect.FullName }}</h3>
         <span class="status" [ngClass]="statusClass">
-          {{ suspect.status }}
+          {{ suspect.Status }}
         </span>
       </div>
 
-      <p class="alias">
-        {{ suspect.Alias || 'No alias' }}
-        <span *ngIf="suspect.Nickname">• {{ suspect.Nickname }}</span>
-      </p>
-
-      <p class="case">
-        Case No:
-        <strong>{{ suspect['Case Number'] }}</strong>
+      <p class="identity-line">
+        NIC <strong>{{ suspect.NIC }}</strong>
       </p>
     </div>
-  </div>
+  </header>
 
   <div class="details-grid">
-    <div>
+    <div class="detail-item">
       <span>NIC</span>
       <strong>{{ suspect.NIC }}</strong>
     </div>
 
-    <div>
-      <span>Passport</span>
+    <div class="detail-item">
+      <span>Passport Number</span>
       <strong>{{ suspect.PassportNumber }}</strong>
     </div>
 
-    <div>
+    <div class="detail-item">
+      <span>Case Number</span>
+      <strong>{{ suspect.CaseNumber }}</strong>
+    </div>
+
+    <div class="detail-item">
       <span>Offence</span>
-      <strong>{{ suspect['offence type'] }}</strong>
+      <strong>{{ suspect.OffenceType }}</strong>
     </div>
 
-    <div>
+    <div class="detail-item">
       <span>Police Station</span>
-      <strong>{{ suspect['police station'] }}</strong>
+      <strong>{{ suspect.PoliceStation }}</strong>
     </div>
 
-    <div>
-      <span>Court</span>
-      <strong>{{ suspect['court details']?.court }}</strong>
+    <div class="detail-item">
+      <span>Recorded Date</span>
+      <strong>{{ suspect.DateRecorded }}</strong>
     </div>
 
-    <div>
-      <span>Recorded</span>
-      <strong>{{ suspect['Date Recorded'] }}</strong>
-    </div>
-  </div>
-
-  <div class="notes" *ngIf="suspect.Notes">
-    {{ suspect.Notes }}
-  </div>
-
-  <div class="card-footer">
-    <div class="officer">
-      Officer:
-      <strong>{{ suspect['Recording Officer'] }}</strong>
-    </div>
-
-    <div class="files" *ngIf="suspect['Attachments(PDF,Scanned Docs,Images)']?.length">
-      <button
-        type="button"
-        *ngFor="let file of suspect['Attachments(PDF,Scanned Docs,Images)']"
-        (click)="openFile(file.filePath)"
-      >
-        {{ file.type }}
-      </button>
+    <div class="detail-item detail-item-wide">
+      <span>Recorded Officer</span>
+      <strong>{{ suspect.RecordingOfficer }}</strong>
     </div>
   </div>
 </article>
