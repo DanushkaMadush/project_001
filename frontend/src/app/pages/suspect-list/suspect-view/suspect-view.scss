@@ -1,3 +1,8 @@
+:host {
+  display: block;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
 .suspect-view-page {
   min-height: 100vh;
   padding: 28px;
@@ -196,6 +201,13 @@ button {
 .secondary-button {
   background: var(--navy-50);
   color: var(--navy-600);
+}
+
+.report-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
 }
 
 .danger-button {

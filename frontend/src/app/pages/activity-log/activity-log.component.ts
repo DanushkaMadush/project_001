@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+import { Breadcrumb } from '../../layout/breadcrumb/breadcrumb';
+import { BreadcrumbService } from '../../services/breadcrumb';
 import { LogsService } from '../../services/logs.service';
 
 @Component({
   selector: 'app-activity-log',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, Breadcrumb],
   templateUrl: './activity-log.component.html',
   styleUrl: './activity-log.component.scss',
 })
@@ -26,10 +28,16 @@ export class ActivityLogComponent {
 
   constructor(
     private logsService: LogsService,
-    private router: Router
+    private router: Router,
+    private breadcrumbService: BreadcrumbService
   ) {}
 
   ngOnInit(): void {
+    this.breadcrumbService.set([
+      { label: 'Home', path: '/home' },
+      { label: 'Activity Log' },
+    ]);
+
     this.logs = this.logsService.getLogs();
     this.actionTypes = this.getUniqueValues('ActionType');
     this.statuses = this.getUniqueValues('Status');

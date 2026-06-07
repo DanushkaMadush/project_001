@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { LogsService } from '../../services/logs.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Breadcrumb } from '../../../layout/breadcrumb/breadcrumb';
+import { LogsService } from '../../../services/logs.service';
+import { BreadcrumbService } from '../../../services/breadcrumb';
 
 @Component({
   selector: 'app-activity-log-view',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, Breadcrumb],
   templateUrl: './activity-log-view.component.html',
   styleUrl: './activity-log-view.component.scss',
 })
@@ -16,8 +18,15 @@ export class ActivityLogViewComponent {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private logsService: LogsService
+    private logsService: LogsService,
+    private breadcrumbService: BreadcrumbService
   ) {
+    this.breadcrumbService.set([
+      { label: 'Home', path: '/home' },
+      { label: 'Activity Log', path: '/activity-log' },
+      { label: 'Log Details' },
+    ]);
+
     const logId = this.route.snapshot.paramMap.get('id');
 
     if (!logId) {

@@ -9,7 +9,8 @@ import { SuspectUpdateComponent } from './pages/suspect-list/suspect-update/susp
 import { SuspectViewComponent } from './pages/suspect-list/suspect-view/suspect-view';
 import { Home2 } from './pages/home-2/home-2';
 import { ActivityLogComponent } from './pages/activity-log/activity-log.component';
-import { ActivityLogViewComponent } from './pages/activity-log-view/activity-log-view.component';
+import { ActivityLogViewComponent } from './pages/activity-log/activity-log-view/activity-log-view.component';
+import { ReportsComponent } from './pages/reports/reports.component';
 
 export const routes: Routes = [
   {
@@ -41,6 +42,11 @@ export const routes: Routes = [
   {
     path: 'activity-log/:id',
     component: ActivityLogViewComponent
+  },
+
+  {
+    path: 'reports',
+    component: ReportsComponent
   },
 
   {
