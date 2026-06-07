@@ -1,0 +1,137 @@
+<div class="page">
+
+  <!-- Dark header band -->
+  <div class="header">
+    <div class="header-inner">
+
+      <!-- Top nav -->
+      <div class="topnav">
+        <div class="brand">
+          <div class="brand-icon">
+            <i class="ti ti-shield-lock"></i>
+          </div>
+          <div>
+            <div class="brand-text">Narcotics Control Unit</div>
+            <div class="brand-sub">Negombo Division</div>
+          </div>
+        </div>
+        <div class="nav-right">
+          <a href="#" class="nav-btn" title="Settings" aria-label="Settings">
+            <i class="ti ti-settings"></i>
+          </a>
+          <div class="nav-divider"></div>
+          <div class="officer-pill">
+            <div class="avatar">{{ officerInitials }}</div>
+            <span class="officer-name">{{ officerName }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero greeting -->
+      <div class="hero">
+        <div class="hero-greeting">{{ greeting }}, {{ officerFirstName }}.</div>
+        <div class="hero-meta">{{ liveTime }}</div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="stat-grid">
+        <div class="stat-card blue">
+          <div class="stat-label">
+            <i class="ti ti-users" aria-hidden="true"></i>
+            Total suspects
+          </div>
+          <div class="stat-value">{{ stats.totalSuspects | number }}</div>
+          <div class="stat-sub">Across all cases</div>
+        </div>
+        <div class="stat-card amber">
+          <div class="stat-label">
+            <i class="ti ti-file-description" aria-hidden="true"></i>
+            Active cases
+          </div>
+          <div class="stat-value">{{ stats.activeCases }}</div>
+          <div class="stat-sub">Currently open</div>
+        </div>
+        <div class="stat-card red">
+          <div class="stat-label">
+            <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+            New this month
+          </div>
+          <div class="stat-value">{{ stats.newThisMonth }}</div>
+          <div class="stat-sub">Added in {{ currentMonth }}</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-label">
+            <i class="ti ti-circle-check" aria-hidden="true"></i>
+            Cases closed
+          </div>
+          <div class="stat-value">{{ stats.casesClosed }}</div>
+          <div class="stat-sub">All time</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+
+    <!-- Quick actions -->
+    <div class="section-header">
+      <span class="section-title">Quick actions</span>
+    </div>
+    <div class="action-grid">
+      <a [routerLink]="['/suspects/new']" class="action-card add">
+        <div class="action-icon">
+          <i class="ti ti-user-plus" aria-hidden="true"></i>
+        </div>
+        <div class="action-title">Add new suspect</div>
+        <div class="action-desc">
+          Create a new suspect profile with full name, NIC / passport,
+          photograph, contact number, address and case reference.
+        </div>
+        <div class="action-footer">
+          <span class="action-tag">New record</span>
+          <i class="ti ti-arrow-right action-arrow" aria-hidden="true"></i>
+        </div>
+      </a>
+      <a [routerLink]="['/suspects']" class="action-card view">
+        <div class="action-icon">
+          <i class="ti ti-list-search" aria-hidden="true"></i>
+        </div>
+        <div class="action-title">View suspects</div>
+        <div class="action-desc">
+          Browse, search and filter all recorded suspect profiles by name,
+          NIC, case number, address or offence type.
+        </div>
+        <div class="action-footer">
+          <span class="action-tag">{{ stats.totalSuspects | number }} records</span>
+          <i class="ti ti-arrow-right action-arrow" aria-hidden="true"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- Recent activity -->
+    <div class="activity-section">
+      <div class="section-header">
+        <span class="section-title">Recent activity</span>
+        <a href="#" class="view-all-link">View all</a>
+      </div>
+      <div class="activity-list">
+        <div class="activity-row" *ngFor="let item of recentActivity">
+          <div class="act-dot" [ngClass]="item.type"></div>
+          <div class="act-main">
+            <div class="act-title">{{ item.title }}</div>
+            <div class="act-sub">{{ item.sub }}</div>
+          </div>
+          <div class="act-time">{{ item.time }}</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    NARCOTICS CONTROL UNIT &nbsp;·&nbsp; NEGOMBO DIVISION &nbsp;·&nbsp; v1.0
+  </div>
+
+</div>
