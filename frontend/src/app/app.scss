@@ -1,0 +1,157 @@
+
+:root {
+
+  /* ── Navy (Primary brand color) ──────────────────────────── */
+  --navy-900: #021828;   /* Deepest navy — heavy backgrounds   */
+  --navy-800: #042C53;   /* Header band, dark surfaces         */
+  --navy-700: #0C3D6B;   /* Hover on dark surfaces             */
+  --navy-600: #185FA5;   /* Primary interactive — buttons,     */
+                         /* links, icon backgrounds            */
+  --navy-400: #378ADD;   /* Muted text on dark bg, sub-labels  */
+  --navy-200: #85B7EB;   /* Light accent text on dark bg       */
+  --navy-100: #B5D4F4;   /* Very light — avatar text,          */
+                         /* officer name on dark               */
+  --navy-50:  #E6F1FB;   /* Tinted backgrounds, tag pills      */
+                         /* (light mode)                       */
+
+  /* ── Amber (Active / in-progress) ───────────────────────── */
+  --amber-600: #BA7517;  /* Stat label & value — active cases  */
+  --amber-light: #FAC775;/* Dark mode version of amber         */
+  --amber-bg: #FAEEDA;   /* Light mode tinted background       */
+
+  /* ── Red (Alert / new entries) ──────────────────────────── */
+  --red-600: #A32D2D;    /* Stat label & value — new records   */
+  --red-light: #F09595;  /* Dark mode version of red           */
+  --red-bg: #FCEBEB;     /* Light mode tinted background       */
+  --red-dot: #A32D2D;    /* Activity dot — new entries         */
+
+  /* ── Green (Success / closed) ───────────────────────────── */
+  --green-600: #3B6D11;  /* Stat label & value — closed cases  */
+  --green-light: #97C459;/* Dark mode version of green         */
+  --green-bg: #EAF3DE;   /* Light mode tinted background       */
+  --green-dot: #3B6D11;  /* Activity dot — closed cases        */
+
+  /* ── Page & surface backgrounds ─────────────────────────── */
+  --bg:        #f0f2f5;  /* Outermost page background          */
+  --surface:   #ffffff;  /* Cards, panels                      */
+  --surface-2: #f6f7f9;  /* Hover state on cards, inputs       */
+
+  /* ── Borders ─────────────────────────────────────────────── */
+  --border:    rgba(0, 0, 0, 0.08);   /* Default subtle border  */
+  --border-md: rgba(0, 0, 0, 0.14);   /* Hover / emphasis       */
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --text-1: #0f1923;   /* Primary text — headings, titles      */
+  --text-2: #4a5568;   /* Secondary text — descriptions        */
+  --text-3: #8a97a8;   /* Tertiary text — timestamps, hints    */
+
+  /* ── Activity dot colors ────────────────────────────────── */
+  --dot-new:    #A32D2D;   /* New suspect added                */
+  --dot-update: #185FA5;   /* Profile updated                  */
+  --dot-closed: #3B6D11;   /* Case closed                      */
+
+}
+
+
+/* =============================================================
+   DARK MODE OVERRIDES
+   ============================================================= */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+    /* ── Page & surface backgrounds ─────────────────────────── */
+    --bg:        #0a0f14;
+    --surface:   #111820;
+    --surface-2: #182030;
+
+    /* ── Borders ─────────────────────────────────────────────── */
+    --border:    rgba(255, 255, 255, 0.07);
+    --border-md: rgba(255, 255, 255, 0.13);
+
+    /* ── Typography ─────────────────────────────────────────── */
+    --text-1: #e8edf2;
+    --text-2: #7a8fa5;
+    --text-3: #3a5068;
+
+    /* ── Navy (dark mode shifts) ─────────────────────────────── */
+    --navy-800: #031f3a;
+    --navy-700: #052d55;
+    --navy-50:  #1a2e44;
+
+    /* ── Semantic colors shift to lighter variants ─────────── */
+    --amber-600: #FAC775;
+    --red-600:   #F09595;
+    --green-600: #97C459;
+
+    --dot-new:    #F09595;
+    --dot-update: #378ADD;
+    --dot-closed: #97C459;
+
+    /* ── Badge backgrounds (semi-transparent in dark) ─────── */
+    --red-bg:   rgba(80,  19,  19, 0.13);
+    --navy-50:  rgba(12,  68, 124, 0.13);
+    --green-bg: rgba(23,  52,   4, 0.13);
+
+  }
+}
+
+
+/* =============================================================
+   QUICK REFERENCE CHEATSHEET
+   ============================================================= */
+
+/*
+
+  HEADER BAND
+  ───────────
+  Background .............. var(--navy-800)
+  Nav icon color .......... var(--navy-200)
+  Brand title ............. var(--navy-50)
+  Brand subtitle .......... var(--navy-400)
+  Officer name ............ var(--navy-100)
+  Stat card bg ............ rgba(255,255,255,0.06)
+  Stat card border ........ rgba(255,255,255,0.08)
+  Stat value (white) ...... #ffffff
+  Stat label (blue) ....... var(--navy-200) / var(--navy-400)
+  Stat label (amber) ...... #FAC775
+  Stat label (red) ........ #F09595
+  Stat label (green) ...... #97C459
+
+  BODY / CARDS
+  ────────────
+  Page background ......... var(--bg)
+  Card background ......... var(--surface)
+  Card hover bg ........... var(--surface-2)
+  Card border ............. var(--border)
+  Card border hover ....... var(--border-md)
+  Add-action icon bg ...... var(--navy-50)
+  Add-action icon color ... var(--navy-600)
+  Action tag pill bg ...... var(--navy-50)
+  Action tag pill text .... var(--navy-600)
+
+  TEXT
+  ────
+  Headings / titles ....... var(--text-1)
+  Descriptions ............ var(--text-2)
+  Timestamps / hints ...... var(--text-3)
+
+  ACTIVITY DOTS
+  ─────────────
+  New entry ............... var(--dot-new)
+  Updated ................. var(--dot-update)
+  Closed .................. var(--dot-closed)
+
+  FONTS USED
+  ──────────
+  Display / UI ............ 'DM Sans' (weights: 300, 400, 500, 600)
+  Timestamps / codes ...... 'DM Mono' (weights: 400, 500)
+  Google Fonts import:
+  https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap
+
+  ICONS
+  ─────
+  Library ................. Tabler Icons (outline)
+  CDN ..................... https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css
+
+*/
