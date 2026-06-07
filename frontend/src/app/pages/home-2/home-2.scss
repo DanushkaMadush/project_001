@@ -1,5 +1,8 @@
-/* All color tokens come from app.scss (global-colors.css) */
+/* ── Reset (add to styles.scss / app.scss if not already there) ──
+   html, body { margin: 0; padding: 0; height: 100%; }
+   ────────────────────────────────────────────────────────────── */
 
+/* ── Page shell ── */
 .page {
   min-height: 100vh;
   display: flex;
@@ -7,7 +10,7 @@
   background: var(--bg);
   font-family: 'DM Sans', system-ui, sans-serif;
   color: var(--text-1);
-  font-size: 15px;
+  font-size: clamp(13px, 1.2vw, 15px);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -15,7 +18,7 @@
 /* ── Header band ── */
 .header {
   background: var(--navy-800);
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 4vw, 3rem);
   position: relative;
   overflow: hidden;
 
@@ -43,126 +46,25 @@
 }
 
 .header-inner {
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-}
-
-/* ── Top nav ── */
-.topnav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  position: relative;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.brand-icon {
-  width: 34px;
-  height: 34px;
-  background: var(--navy-600);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 17px;
-  color: var(--navy-100);
-}
-
-.brand-text {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--navy-50);
-  letter-spacing: 0.02em;
-}
-
-.brand-sub {
-  font-size: 11px;
-  color: var(--navy-400);
-  margin-top: 1px;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.nav-btn {
-  width: 34px;
-  height: 34px;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 17px;
-  color: var(--navy-200);
-  cursor: pointer;
-  transition: background 0.15s;
-  text-decoration: none;
-
-  &:hover { background: rgba(255,255,255,0.12); }
-}
-
-.nav-divider {
-  width: 1px;
-  height: 22px;
-  background: rgba(255,255,255,0.1);
-  margin: 0 4px;
-}
-
-.officer-pill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 999px;
-  padding: 4px 12px 4px 4px;
-}
-
-.avatar {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--navy-600);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--navy-100);
-  letter-spacing: 0.04em;
-}
-
-.officer-name {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--navy-100);
 }
 
 /* ── Hero ── */
 .hero {
-  padding: 1.75rem 0 0;
+  padding: clamp(1.25rem, 3vw, 1.75rem) 0 0;
 }
 
 .hero-greeting {
-  font-size: 22px;
+  font-size: clamp(18px, 2.5vw, 26px);
   font-weight: 500;
   color: #ffffff;
   letter-spacing: -0.3px;
 }
 
 .hero-meta {
-  font-size: 12px;
+  font-size: clamp(10px, 1vw, 12px);
   color: var(--navy-400);
   margin-top: 3px;
   font-family: 'DM Mono', monospace;
@@ -173,16 +75,16 @@
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin: 1.5rem 0 0;
-  padding-bottom: 2rem;
+  gap: clamp(8px, 1.2vw, 14px);
+  margin: clamp(1rem, 2vw, 1.5rem) 0 0;
+  padding-bottom: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 .stat-card {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 10px;
-  padding: 1rem 1.1rem;
+  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(0.75rem, 1.5vw, 1.1rem);
   transition: background 0.15s, border-color 0.15s;
   cursor: default;
   animation: fadeUp 0.4s ease both;
@@ -204,7 +106,7 @@
 }
 
 .stat-label {
-  font-size: 11px;
+  font-size: clamp(9px, 0.85vw, 11px);
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -214,11 +116,11 @@
   gap: 6px;
   margin-bottom: 10px;
 
-  i { font-size: 14px; }
+  i { font-size: clamp(12px, 1.1vw, 14px); }
 }
 
 .stat-value {
-  font-size: 30px;
+  font-size: clamp(22px, 3vw, 32px);
   font-weight: 300;
   color: #ffffff;
   letter-spacing: -1px;
@@ -226,7 +128,7 @@
 }
 
 .stat-sub {
-  font-size: 11px;
+  font-size: clamp(9px, 0.85vw, 11px);
   color: var(--navy-400);
   margin-top: 6px;
 }
@@ -234,13 +136,14 @@
 /* ── Body ── */
 .body {
   flex: 1;
-  padding: 2rem;
-  max-width: 1100px;
+  padding: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 4vw, 3rem);
   width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  align-self: center;
+  box-sizing: border-box;
 }
 
+/* ── Section header ── */
 .section-header {
   display: flex;
   align-items: center;
@@ -249,7 +152,7 @@
 }
 
 .section-title {
-  font-size: 11px;
+  font-size: clamp(10px, 0.9vw, 11px);
   font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -268,22 +171,22 @@
 /* ── Action cards ── */
 .action-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 1.5vw, 16px);
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 .action-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 1.5rem 1.75rem;
+  padding: clamp(1.1rem, 2vw, 1.5rem) clamp(1.1rem, 2vw, 1.75rem);
   text-decoration: none;
   color: inherit;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: 180px;
+  min-height: clamp(150px, 18vw, 200px);
   transition: border-color 0.15s, background 0.15s, transform 0.12s;
   animation: fadeUp 0.4s ease both;
 
@@ -316,23 +219,23 @@
 }
 
 .action-icon {
-  width: 44px;
-  height: 44px;
+  width: clamp(36px, 4vw, 48px);
+  height: clamp(36px, 4vw, 48px);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: clamp(18px, 2vw, 24px);
 }
 
 .action-title {
-  font-size: 16px;
+  font-size: clamp(14px, 1.4vw, 17px);
   font-weight: 500;
   color: var(--text-1);
 }
 
 .action-desc {
-  font-size: 13px;
+  font-size: clamp(12px, 1.1vw, 14px);
   color: var(--text-2);
   line-height: 1.65;
   flex: 1;
@@ -346,7 +249,7 @@
 }
 
 .action-tag {
-  font-size: 11px;
+  font-size: clamp(10px, 0.9vw, 11px);
   font-weight: 500;
   padding: 3px 10px;
   border-radius: 999px;
@@ -382,7 +285,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 12px 16px;
+  padding: clamp(10px, 1.2vw, 14px) clamp(12px, 1.5vw, 18px);
   border-bottom: 1px solid var(--border);
   transition: background 0.12s;
 
@@ -407,7 +310,7 @@
 }
 
 .act-title {
-  font-size: 13px;
+  font-size: clamp(12px, 1.1vw, 14px);
   font-weight: 500;
   color: var(--text-1);
   white-space: nowrap;
@@ -416,28 +319,18 @@
 }
 
 .act-sub {
-  font-size: 11px;
+  font-size: clamp(10px, 0.9vw, 12px);
   color: var(--text-3);
   margin-top: 1px;
 }
 
 .act-time {
-  font-size: 11px;
+  font-size: clamp(10px, 0.9vw, 12px);
   color: var(--text-3);
   font-family: 'DM Mono', monospace;
   flex-shrink: 0;
   min-width: 52px;
   text-align: right;
-}
-
-/* ── Footer ── */
-.footer {
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 11px;
-  color: var(--text-3);
-  font-family: 'DM Mono', monospace;
-  border-top: 1px solid var(--border);
 }
 
 /* ── Animations ── */
@@ -446,11 +339,22 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Responsive ── */
-@media (max-width: 680px) {
-  .header { padding: 0 1rem; }
-  .body { padding: 1.25rem 1rem; }
-  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .action-grid { grid-template-columns: 1fr; }
-  .topnav { flex-wrap: wrap; gap: 10px; }
+/* ── Breakpoints ── */
+
+/* Tablet: 2-col stats, stack actions */
+@media (max-width: 900px) {
+  .stat-grid    { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .action-grid  { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Mobile: single column everything */
+@media (max-width: 560px) {
+  .stat-grid    { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .action-grid  { grid-template-columns: 1fr; }
+  .action-card  { min-height: unset; }
+  .hero-greeting { font-size: 20px; }
+}
+
+@media (max-width: 380px) {
+  .stat-grid { grid-template-columns: 1fr 1fr; }
 }
