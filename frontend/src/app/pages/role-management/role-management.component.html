@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-
+<app-breadcrumb></app-breadcrumb>
 <!-- ── Page Header ── -->
 <div class="page-header">
   <div class="header-left">
@@ -18,7 +18,7 @@
       [(ngModel)]="searchTerm"
     />
   </div>
-  <button class="btn btn-primary" (click)="openAddModal()">
+  <button class="primary-button" (click)="openAddModal()">
     <i class="ti ti-shield-plus"></i>
     Add User Role
   </button>
@@ -65,7 +65,7 @@
     <div class="card-footer">
       <!-- Assign / Unassign -->
       <button
-        class="btn btn-amber btn-sm"
+        class="primary-button"
         (click)="openAssignModal(role)"
         title="Assign / Unassign Roles"
       >
@@ -75,7 +75,7 @@
 
       <!-- Remove Role -->
       <button
-        class="btn btn-danger btn-sm"
+        class="primary-button"
         [disabled]="role.isSystem"
         (click)="confirmRemove(role)"
         [title]="role.isSystem ? 'System roles cannot be removed' : 'Remove role'"
@@ -154,8 +154,8 @@
     </div>
 
     <div class="modal-footer">
-      <button class="btn btn-ghost" (click)="closeAddModal()">Cancel</button>
-      <button class="btn btn-primary" (click)="addRole()">
+      <button class="primary-button" (click)="closeAddModal()">Cancel</button>
+      <button class="primary-button" (click)="addRole()">
         <i class="ti ti-check"></i>
         Create Role
       </button>
@@ -172,7 +172,7 @@
 
     <div class="modal-header">
       <h2><i class="ti ti-user-cog"></i> Assign / Unassign — {{ selectedRole?.name }}</h2>
-      <button class="close-btn" (click)="closeAssignModal()">
+      <button class="primary-button" (click)="closeAssignModal()">
         <i class="ti ti-x"></i>
       </button>
     </div>
@@ -197,7 +197,7 @@
             </select>
           </div>
           <button
-            class="btn btn-primary btn-sm"
+            class="primary-button"
             [disabled]="!assignRoleId"
             (click)="assignRole()"
           >
@@ -224,7 +224,7 @@
               </div>
               <span style="flex:1">{{ u.name }}</span>
               <button
-                class="btn btn-danger btn-sm"
+                class="primary-button"
                 (click)="unassignUserId = u.id; unassignRole()"
               >
                 <i class="ti ti-user-minus"></i>
@@ -241,7 +241,7 @@
     </div>
 
     <div class="modal-footer">
-      <button class="btn btn-ghost" (click)="closeAssignModal()">
+      <button class="primary-button" (click)="closeAssignModal()">
         <i class="ti ti-check"></i>
         Done
       </button>
@@ -258,7 +258,7 @@
 
     <div class="modal-header">
       <h2><i class="ti ti-alert-triangle"></i> Remove Role</h2>
-      <button class="close-btn" (click)="cancelRemove()">
+      <button class="primary-button" (click)="cancelRemove()">
         <i class="ti ti-x"></i>
       </button>
     </div>
@@ -276,8 +276,8 @@
     </div>
 
     <div class="modal-footer">
-      <button class="btn btn-ghost" (click)="cancelRemove()">Cancel</button>
-      <button class="btn btn-danger" (click)="removeRole()">
+      <button class="primary-button" (click)="cancelRemove()">Cancel</button>
+      <button class="primary-button" (click)="removeRole()">
         <i class="ti ti-trash"></i>
         Remove Role
       </button>
