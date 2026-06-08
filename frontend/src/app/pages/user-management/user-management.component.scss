@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+// ── Variables (mirrors app.scss tokens) ──────────────────────
+$navy-900: #021828;
+$navy-800: #042C53;
+$navy-700: #0C3D6B;
+$navy-600: #185FA5;
+$navy-400: #378ADD;
+$navy-200: #85B7EB;
+$navy-100: #B5D4F4;
+$navy-50:  #E6F1FB;
+
+$amber-600: #BA7517;
+$amber-bg:  #FAEEDA;
+
+$red-600: #A32D2D;
+$red-bg:  #FCEBEB;
+
+$green-600: #3B6D11;
+$green-bg:  #EAF3DE;
+
+$bg:        #f0f2f5;
+$surface:   #ffffff;
+$surface-2: #f6f7f9;
+
+$border:    rgba(0, 0, 0, 0.08);
+$border-md: rgba(0, 0, 0, 0.14);
+
+$text-1: #0f1923;
+$text-2: #4a5568;
+$text-3: #8a97a8;
+
+// ── Host ──────────────────────────────────────────────────────
+:host {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  background: $bg;
+  min-height: 100vh;
+  padding: 28px 32px;
+  box-sizing: border-box;
+  color: $text-1;
+}
+
+// ── Page header ───────────────────────────────────────────────
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  .header-left {
+    h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: $text-1;
+      margin: 0 0 4px;
+      letter-spacing: -0.3px;
+    }
+    p {
+      font-size: 13.5px;
+      color: $text-3;
+      margin: 0;
+      font-family: 'DM Mono', monospace;
+    }
+  }
+}
+
+// ── Stats row ─────────────────────────────────────────────────
+.stats-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: $surface;
+  border: 1px solid $border;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+
+  .stat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: $text-3;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+
+  .stat-value {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'DM Mono', monospace;
+  }
+
+  &.total   { .stat-dot { background: $navy-600; } .stat-value { color: $navy-600; } }
+  &.active  { .stat-dot { background: $green-600; } .stat-value { color: $green-600; } }
+  &.inactive{ .stat-dot { background: $red-600; } .stat-value { color: $red-600; } }
+}
+
+// ── Toolbar ───────────────────────────────────────────────────
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.search-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 320px;
+
+  i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $text-3;
+    font-size: 16px;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 12px 9px 36px;
+    border-radius: 8px;
+    border: 1px solid $border;
+    background: $surface;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    color: $text-1;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &::placeholder { color: $text-3; }
+
+    &:focus {
+      border-color: $navy-400;
+      box-shadow: 0 0 0 3px rgba(#185FA5, 0.1);
+    }
+  }
+}
+
+// ── Buttons ───────────────────────────────────────────────────
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.12s;
+
+  &:active { transform: scale(0.97); }
+
+  &.btn-primary {
+    background: $navy-600;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(#185FA5, 0.28);
+
+    &:hover { background: $navy-700; }
+  }
+
+  &.btn-ghost {
+    background: transparent;
+    color: $text-2;
+    border: 1px solid $border-md;
+
+    &:hover { background: $surface-2; color: $text-1; }
+  }
+
+  &.btn-danger {
+    background: $red-bg;
+    color: $red-600;
+    border: 1px solid rgba($red-600, 0.15);
+
+    &:hover { background: darken($red-bg, 4%); }
+  }
+
+  &.btn-sm {
+    padding: 5px 10px;
+    font-size: 12.5px;
+    border-radius: 6px;
+  }
+
+  i { font-size: 15px; }
+}
+
+// ── Table card ────────────────────────────────────────────────
+.table-card {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background: $navy-800;
+
+    th {
+      padding: 13px 16px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: $navy-200;
+      white-space: nowrap;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $border;
+      transition: background 0.15s;
+
+      &:last-child { border-bottom: none; }
+      &:hover { background: $surface-2; }
+    }
+
+    td {
+      padding: 13px 16px;
+      font-size: 13.5px;
+      color: $text-2;
+      vertical-align: middle;
+    }
+  }
+}
+
+// ── User cell ─────────────────────────────────────────────────
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: $navy-800;
+    color: $navy-100;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .user-name {
+    font-weight: 500;
+    color: $text-1;
+    display: block;
+    font-size: 13.5px;
+  }
+
+  .user-id {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    color: $text-3;
+  }
+}
+
+// ── Role pill ─────────────────────────────────────────────────
+.role-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: $navy-50;
+  color: $navy-600;
+  border: 1px solid rgba($navy-600, 0.12);
+}
+
+// ── Status badge ──────────────────────────────────────────────
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  &.active {
+    background: $green-bg;
+    color: $green-600;
+    &::before { background: $green-600; }
+  }
+
+  &.inactive {
+    background: $red-bg;
+    color: $red-600;
+    &::before { background: $red-600; }
+  }
+}
+
+// ── Actions cell ──────────────────────────────────────────────
+.actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+// ── Empty state ───────────────────────────────────────────────
+.empty-row td {
+  text-align: center;
+  padding: 48px 16px;
+  color: $text-3;
+  font-size: 13.5px;
+
+  i { font-size: 32px; display: block; margin-bottom: 8px; opacity: 0.4; }
+}
+
+// ── Modal overlay ─────────────────────────────────────────────
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba($navy-900, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.18s ease;
+}
+
+.modal {
+  background: $surface;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 24px 60px rgba($navy-900, 0.22);
+  overflow: hidden;
+  animation: slideUp 0.2s ease;
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid $border;
+    background: $navy-800;
+
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: $navy-50;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      i { color: $navy-200; font-size: 18px; }
+    }
+
+    .close-btn {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: $navy-200;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.15s;
+
+      &:hover { background: rgba(255,255,255,0.15); }
+      i { font-size: 16px; }
+    }
+  }
+
+  .modal-body {
+    padding: 20px 24px;
+  }
+
+  .modal-footer {
+    padding: 12px 24px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+}
+
+// ── Form fields ───────────────────────────────────────────────
+.form-group {
+  margin-bottom: 16px;
+
+  label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: $text-2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 12px;
+    border: 1px solid $border-md;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    color: $text-1;
+    background: $surface;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus {
+      border-color: $navy-400;
+      box-shadow: 0 0 0 3px rgba(#185FA5, 0.1);
+    }
+  }
+
+  select { cursor: pointer; }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+// ── Animations ────────────────────────────────────────────────
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// ── Dark mode ─────────────────────────────────────────────────
+@media (prefers-color-scheme: dark) {
+  :host {
+    background: #0a0f14;
+    color: #e8edf2;
+  }
+
+  .stat-pill,
+  .table-card,
+  .search-wrap input {
+    background: #111820;
+    border-color: rgba(255,255,255,0.07);
+    color: #e8edf2;
+  }
+
+  table tbody tr:hover { background: #182030; }
+  table tbody td { color: #7a8fa5; }
+  .user-cell .user-name { color: #e8edf2; }
+
+  .modal { background: #111820; }
+  .form-group input,
+  .form-group select {
+    background: #182030;
+    border-color: rgba(255,255,255,0.13);
+    color: #e8edf2;
+  }
+
+  .role-pill {
+    background: rgba(12, 68, 124, 0.13);
+    color: #378ADD;
+  }
+
+  .status-badge.active  { background: rgba(23, 52, 4, 0.13); color: #97C459; &::before { background: #97C459; } }
+  .status-badge.inactive{ background: rgba(80, 19, 19, 0.13); color: #F09595; &::before { background: #F09595; } }
+
+  .btn.btn-ghost { border-color: rgba(255,255,255,0.13); color: #7a8fa5; &:hover { background: #182030; } }
+}
