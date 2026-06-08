@@ -136,6 +136,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
       if (isValidUser) {
         if(enteredUsername == 'admin'){
+
           this.router.navigate(['dashboard/home']);
         }else{
           this.router.navigate(['dashboard/home2']);
@@ -157,6 +158,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     const enteredUsername = this.emailControl.value.trim().toLowerCase();
     const enteredPassword = this.passwordControl.value.trim();
 
+    console.log('Entered UserName:',enteredUsername);
+    
+
     const user = this.USERS.find(
       u => u.username.toLowerCase() === enteredUsername &&
            u.password               === enteredPassword
@@ -164,7 +168,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     if (user) {
       const { password, ...safeUser } = user;
-      localStorage.setItem('currentUser', JSON.stringify(safeUser));
+      localStorage.setItem('currentUser', enteredUsername);
       return true;
     }
 
