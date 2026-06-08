@@ -58,7 +58,7 @@
     </div>
     <div class="action-grid">
 
-      <a [routerLink]="['/user-management']" class="action-card">
+      <a [routerLink]="['/dashboard/user-management']" class="action-card">
         <div class="action-icon icon-blue">
           <i class="ti ti-users" aria-hidden="true"></i>
         </div>
@@ -73,7 +73,7 @@
         </div>
       </a>
 
-      <a [routerLink]="['/role-management']" class="action-card">
+      <a [routerLink]="['/dashboard/role-management']" class="action-card">
         <div class="action-icon icon-amber">
           <i class="ti ti-key" aria-hidden="true"></i>
         </div>
@@ -88,7 +88,7 @@
         </div>
       </a>
 
-      <a [routerLink]="['/activity-log']" class="action-card">
+      <a [routerLink]="['/dashboard/activity-log']" class="action-card">
         <div class="action-icon icon-purple">
           <i class="ti ti-history" aria-hidden="true"></i>
         </div>
@@ -103,7 +103,7 @@
         </div>
       </a>
 
-      <a [routerLink]="['/reports']" class="action-card">
+      <a [routerLink]="['/dashboard/reports']" class="action-card">
         <div class="action-icon icon-green">
           <i class="ti ti-report-analytics" aria-hidden="true"></i>
         </div>
@@ -124,7 +124,7 @@
     <div class="activity-section">
       <div class="section-header">
         <span class="section-title">Recent activity</span>
-        <a [routerLink]="['/activity-log']" class="view-all-link">View all</a>
+        <a [routerLink]="['/dashboard/activity-log']" class="view-all-link">View all</a>
       </div>
       <div class="activity-list">
         <div class="activity-row" *ngFor="let item of recentActivity">
