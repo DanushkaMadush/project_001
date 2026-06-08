@@ -74,16 +74,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
   }
 
-  toggleTheme(): void {
-    this.isDarkMode = !this.isDarkMode;
-    if (this.isDarkMode) {
-      document.documentElement.classList.add('dark-theme');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark-theme');
-      localStorage.setItem('theme', 'light');
-    }
-  }
+  
 
   ngOnDestroy(): void {
     this.destroy$.next();
@@ -145,9 +136,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
       if (isValidUser) {
         if(enteredUsername == 'admin'){
-          this.router.navigate(['/home']);
+          this.router.navigate(['dashboard/home']);
         }else{
-          this.router.navigate(['/user-management']);
+          this.router.navigate(['dashboard/home2']);
         }
         
       } else {
