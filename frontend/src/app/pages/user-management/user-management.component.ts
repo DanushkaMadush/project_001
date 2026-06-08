@@ -84,7 +84,7 @@ export class UserManagementComponent implements OnInit {
 
   ngOnInit(): void {
     this.breadcrumbService.set([
-      { label: 'Home', path: '/home' },
+      { label: 'Home', path: '/dashboard/home' },
       { label: 'User Management' },
     ]);
   }
