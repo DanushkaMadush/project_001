@@ -87,7 +87,7 @@ export class SuspectAddComponent {
 
     ngOnInit(): void {
         this.bc.set([
-      { label: 'Home',         path: '/home2' },
+      { label: 'Home',         path: '/dashboard/home2' },
       { label: 'Add New Suspect' }               // no path = current page
     ]);
   }

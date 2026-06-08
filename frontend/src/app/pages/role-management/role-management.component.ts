@@ -120,7 +120,7 @@ export class RoleManagementComponent implements OnInit {
 
   ngOnInit(): void {
     this.breadcrumbService.set([
-      { label: 'Home', path: '/home' },
+      { label: 'Home', path: '/dashboard/home' },
       { label: 'Role Management' },
     ]);
   }

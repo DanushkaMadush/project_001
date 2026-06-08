@@ -32,7 +32,7 @@ export class SuspectListComponent {
 
   ngOnInit(): void {
         this.bc.set([
-      { label: 'Home',         path: '/home2' },
+      { label: 'Home',         path: '/dashboard/home2' },
       { label: 'Suspect List' }               // no path = current page
     ]);
     this.suspects = this.suspectsService.getSuspects();
@@ -114,6 +114,6 @@ export class SuspectListComponent {
   }
 
   viewSuspect(caseNumber: string): void {
-    this.router.navigate(['/suspect', caseNumber]);
+    this.router.navigate(['dashboard/suspect', caseNumber]);
   }
 }

@@ -41,7 +41,7 @@ export class SuspectViewComponent {
   }
 
   backToList(): void {
-    this.router.navigate(['/suspect-list']);
+    this.router.navigate(['dashboard/suspect-list']);
   }
 
   enableEdit(): void {
@@ -92,7 +92,7 @@ export class SuspectViewComponent {
     }
 
     this.suspectsService.deleteSuspectByCaseNumber(this.suspect.CaseNumber);
-    this.router.navigate(['/suspect-list']);
+    this.router.navigate(['dashboard/suspect-list']);
   }
 
   private cloneSuspect(suspect: any): any {

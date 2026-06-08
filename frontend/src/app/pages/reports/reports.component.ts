@@ -63,7 +63,7 @@ export class ReportsComponent {
 
   ngOnInit(): void {
     this.breadcrumbService.set([
-      { label: 'Home', path: '/home' },
+      { label: 'Home', path: '/dashboard/home' },
       { label: 'Reports' },
     ]);
   }

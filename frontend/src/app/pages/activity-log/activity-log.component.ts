@@ -34,7 +34,7 @@ export class ActivityLogComponent {
 
   ngOnInit(): void {
     this.breadcrumbService.set([
-      { label: 'Home', path: '/home' },
+      { label: 'Home', path: '/dashboard/home' },
       { label: 'Activity Log' },
     ]);
 
