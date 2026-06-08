@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Breadcrumb } from "../../layout/breadcrumb/breadcrumb";
+import { BreadcrumbService } from '../../services/breadcrumb';
 
 export interface Permission {
   key: string;
@@ -21,7 +23,7 @@ export interface Role {
 @Component({
   selector: 'app-role-management',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, Breadcrumb],
   templateUrl: './role-management.component.html',
   styleUrls: ['./role-management.component.scss'],
 })
@@ -110,7 +112,20 @@ export class RoleManagementComponent implements OnInit {
     { id: 'USR-005', name: 'Leon Müller',   currentRole: 'Viewer' },
   ];
 
-  ngOnInit(): void {}
+  constructor(
+    private breadcrumbService: BreadcrumbService
+  ){
+    
+  }
+
+  ngOnInit(): void {
+    this.breadcrumbService.set([
+      { label: 'Home', path: '/home' },
+      { label: 'Role Management' },
+    ]);
+  }
+
+
 
   get filteredRoles(): Role[] {
     const term = this.searchTerm.toLowerCase();
