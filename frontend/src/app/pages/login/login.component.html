@@ -1,1 +1,115 @@
-<p>login works!</p>
+<div class="page">
+
+  <!-- Main Body -->
+  <main class="body">
+    <div class="login-card">
+
+      <!-- Card Top -->
+      <div class="card-top">
+        
+        <h1>Welcome back</h1>
+        <p>Sign in to access your officer dashboard</p>
+      </div>
+
+      <!-- Card Body -->
+      <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+          <!-- Email Field -->
+          <div class="field">
+            <label for="email">Email address</label>
+            <div class="input-wrap">
+              <i class="ti ti-mail icon" aria-hidden="true"></i>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="officer@department.gov"
+                autocomplete="email"
+                [class.input-error]="isFieldInvalid('email')"
+              />
+            </div>
+            <span class="error-msg" *ngIf="isFieldInvalid('email')">
+              <i class="ti ti-alert-circle" aria-hidden="true"></i>
+              {{ getEmailError() }}
+            </span>
+          </div>
+
+          <!-- Password Field -->
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="input-wrap">
+              <i class="ti ti-lock icon" aria-hidden="true"></i>
+              <input
+                id="password"
+                [type]="showPassword ? 'text' : 'password'"
+                formControlName="password"
+                placeholder="••••••••••"
+                autocomplete="current-password"
+                [class.input-error]="isFieldInvalid('password')"
+              />
+              <button
+                type="button"
+                class="eye-btn"
+                (click)="togglePassword()"
+                [attr.aria-label]="showPassword ? 'Hide password' : 'Show password'"
+              >
+                <i [class]="showPassword ? 'ti ti-eye-off' : 'ti ti-eye'" aria-hidden="true"></i>
+              </button>
+            </div>
+            <span class="error-msg" *ngIf="isFieldInvalid('password')">
+              <i class="ti ti-alert-circle" aria-hidden="true"></i>
+              Password is required
+            </span>
+          </div>
+
+          <!-- Remember Me / Forgot Password -->
+          <div class="row-between">
+            <label class="remember">
+              <input type="checkbox" formControlName="rememberMe" />
+              Remember me
+            </label>
+            <a routerLink="/forgot-password" class="forgot">Forgot password?</a>
+          </div>
+
+          <!-- Server Error -->
+          <div class="alert-error" *ngIf="serverError" role="alert">
+            <i class="ti ti-shield-x" aria-hidden="true"></i>
+            {{ serverError }}
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="btn-primary"
+            (click)="onSubmit()"
+          >
+            <ng-container *ngIf="!isLoading">
+              <i class="ti ti-login" aria-hidden="true"></i>
+              Sign in
+            </ng-container>
+            <ng-container *ngIf="isLoading">
+              <span class="spinner" aria-hidden="true"></span>
+              Signing in…
+            </ng-container>
+          </button>
+
+        </form>
+
+        <!-- Divider -->
+        <div class="divider">
+          <hr /><span>or</span><hr />
+        </div>
+
+        <!-- Footer -->
+        <p class="footer-text">
+          Don't have an account?
+          <a routerLink="/request-access">Request access</a>
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+
+</div>
