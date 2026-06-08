@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Breadcrumb } from "../../layout/breadcrumb/breadcrumb";
+import { BreadcrumbService } from '../../services/breadcrumb';
 
 export interface User {
   id: string;
@@ -14,11 +16,18 @@ export interface User {
 @Component({
   selector: 'app-user-management',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, Breadcrumb],
   templateUrl: './user-management.component.html',
   styleUrls: ['./user-management.component.scss'],
 })
 export class UserManagementComponent implements OnInit {
+
+  constructor(
+    private breadcrumbService: BreadcrumbService
+  ){
+    
+  }
+
   users: User[] = [
     {
       id: 'USR-001',
@@ -73,7 +82,12 @@ export class UserManagementComponent implements OnInit {
     return this.users.filter((u) => u.status === 'inactive').length;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.breadcrumbService.set([
+      { label: 'Home', path: '/home' },
+      { label: 'User Management' },
+    ]);
+  }
 
   openAddModal(): void {
     this.newUser = { status: 'active' };
