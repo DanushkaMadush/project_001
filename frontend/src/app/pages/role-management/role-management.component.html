@@ -1,1 +1,286 @@
-<p>role-management works!</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+<!-- ── Page Header ── -->
+<div class="page-header">
+  <div class="header-left">
+    <h1>Role Management</h1>
+    <p>{{ roles.length }} roles configured</p>
+  </div>
+</div>
+
+<!-- ── Toolbar ── -->
+<div class="toolbar">
+  <div class="search-wrap">
+    <i class="ti ti-search"></i>
+    <input
+      type="text"
+      placeholder="Search roles…"
+      [(ngModel)]="searchTerm"
+    />
+  </div>
+  <button class="btn btn-primary" (click)="openAddModal()">
+    <i class="ti ti-shield-plus"></i>
+    Add User Role
+  </button>
+</div>
+
+<!-- ── Roles Grid ── -->
+<div class="roles-grid" *ngIf="filteredRoles.length > 0; else emptyState">
+  <div class="role-card" *ngFor="let role of filteredRoles">
+
+    <div class="card-header">
+      <div class="role-icon">
+        <i class="ti ti-shield-check"></i>
+      </div>
+      <div class="role-meta">
+        <div class="role-name">
+          {{ role.name }}
+        </div>
+        <span class="role-id">{{ role.id }}</span>
+      </div>
+      <span class="system-badge" *ngIf="role.isSystem">System</span>
+    </div>
+
+    <div class="card-body">
+      <p class="role-description">{{ role.description }}</p>
+
+      <div class="user-count">
+        <i class="ti ti-users"></i>
+        <span>{{ role.userCount }}</span> assigned users
+      </div>
+
+      <div class="perm-chips">
+        <ng-container *ngFor="let key of role.permissions.slice(0, 4)">
+          <span class="perm-chip">
+            <i class="ti ti-check"></i>
+            {{ permLabel(key) }}
+          </span>
+        </ng-container>
+        <span class="perm-more" *ngIf="role.permissions.length > 4">
+          +{{ role.permissions.length - 4 }} more
+        </span>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <!-- Assign / Unassign -->
+      <button
+        class="btn btn-amber btn-sm"
+        (click)="openAssignModal(role)"
+        title="Assign / Unassign Roles"
+      >
+        <i class="ti ti-user-cog"></i>
+        Assign/Unassign
+      </button>
+
+      <!-- Remove Role -->
+      <button
+        class="btn btn-danger btn-sm"
+        [disabled]="role.isSystem"
+        (click)="confirmRemove(role)"
+        [title]="role.isSystem ? 'System roles cannot be removed' : 'Remove role'"
+      >
+        <i class="ti ti-trash"></i>
+        Remove
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #emptyState>
+  <div class="empty-state">
+    <i class="ti ti-shield-off"></i>
+    No roles found
+  </div>
+</ng-template>
+
+
+<!-- ══════════════════════════════════════════════
+     ADD ROLE MODAL
+══════════════════════════════════════════════ -->
+<div class="modal-overlay" *ngIf="showAddModal" (click)="closeAddModal()">
+  <div class="modal" (click)="$event.stopPropagation()">
+
+    <div class="modal-header">
+      <h2><i class="ti ti-shield-plus"></i> Add User Role</h2>
+      <button class="close-btn" (click)="closeAddModal()">
+        <i class="ti ti-x"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Role Name</label>
+        <input
+          type="text"
+          placeholder="e.g. Field Investigator"
+          [(ngModel)]="newRole.name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea
+          rows="2"
+          placeholder="Brief description of this role's responsibilities…"
+          [(ngModel)]="newRole.description"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Permissions</label>
+
+        <ng-container *ngFor="let group of permissionGroups">
+          <div class="perm-section-title">
+            <i class="ti" [ngClass]="permGroupIcon(group)"></i>
+            {{ group }}
+          </div>
+          <div class="perm-grid">
+            <label
+              class="perm-toggle"
+              *ngFor="let perm of permissionsInGroup(group)"
+              [class.checked]="hasPermission(newRole.permissions || [], perm.key)"
+            >
+              <input
+                type="checkbox"
+                [checked]="hasPermission(newRole.permissions || [], perm.key)"
+                (change)="toggleNewPerm(perm.key)"
+              />
+              {{ perm.label }}
+            </label>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-ghost" (click)="closeAddModal()">Cancel</button>
+      <button class="btn btn-primary" (click)="addRole()">
+        <i class="ti ti-check"></i>
+        Create Role
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     ASSIGN / UNASSIGN MODAL
+══════════════════════════════════════════════ -->
+<div class="modal-overlay" *ngIf="showAssignModal" (click)="closeAssignModal()">
+  <div class="modal" (click)="$event.stopPropagation()">
+
+    <div class="modal-header">
+      <h2><i class="ti ti-user-cog"></i> Assign / Unassign — {{ selectedRole?.name }}</h2>
+      <button class="close-btn" (click)="closeAssignModal()">
+        <i class="ti ti-x"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+
+      <!-- Assign section -->
+      <div class="assign-section">
+        <h3><i class="ti ti-user-plus"></i> Assign Role to User</h3>
+        <div class="assign-row">
+          <div class="form-group">
+            <label>Select User</label>
+            <select [(ngModel)]="assignRoleId">
+              <option value="">Choose a user…</option>
+              <option
+                *ngFor="let u of availableUsers"
+                [value]="u.id"
+                [disabled]="u.currentRole === selectedRole?.name"
+              >
+                {{ u.name }} ({{ u.currentRole }})
+              </option>
+            </select>
+          </div>
+          <button
+            class="btn btn-primary btn-sm"
+            [disabled]="!assignRoleId"
+            (click)="assignRole()"
+          >
+            <i class="ti ti-user-check"></i>
+            Assign
+          </button>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Unassign section -->
+      <div class="assign-section">
+        <h3><i class="ti ti-user-minus"></i> Unassign Users from Role</h3>
+
+        <div class="assigned-list">
+          <ng-container *ngIf="usersWithRole(selectedRole?.name || '').length > 0; else noUsers">
+            <div
+              class="assigned-user-row"
+              *ngFor="let u of usersWithRole(selectedRole?.name || '')"
+            >
+              <div class="avatar-sm">
+                {{ u.name.split(' ')[0][0] }}{{ u.name.split(' ')[1]?.[0] || '' }}
+              </div>
+              <span style="flex:1">{{ u.name }}</span>
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="unassignUserId = u.id; unassignRole()"
+              >
+                <i class="ti ti-user-minus"></i>
+                Unassign
+              </button>
+            </div>
+          </ng-container>
+
+          <ng-template #noUsers>
+            <p class="no-users">No users currently assigned to this role.</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-ghost" (click)="closeAssignModal()">
+        <i class="ti ti-check"></i>
+        Done
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     REMOVE CONFIRM MODAL
+══════════════════════════════════════════════ -->
+<div class="modal-overlay" *ngIf="showRemoveConfirm" (click)="cancelRemove()">
+  <div class="modal modal-sm" (click)="$event.stopPropagation()">
+
+    <div class="modal-header">
+      <h2><i class="ti ti-alert-triangle"></i> Remove Role</h2>
+      <button class="close-btn" (click)="cancelRemove()">
+        <i class="ti ti-x"></i>
+      </button>
+    </div>
+
+    <div class="confirm-body">
+      <div class="confirm-icon">
+        <i class="ti ti-shield-off"></i>
+      </div>
+      <h3>Remove "{{ roleToRemove?.name }}"?</h3>
+      <p>
+        This will permanently delete the role and remove it from
+        <strong>{{ roleToRemove?.userCount }} user(s)</strong>.
+        This action cannot be undone.
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-ghost" (click)="cancelRemove()">Cancel</button>
+      <button class="btn btn-danger" (click)="removeRole()">
+        <i class="ti ti-trash"></i>
+        Remove Role
+      </button>
+    </div>
+  </div>
+</div>
