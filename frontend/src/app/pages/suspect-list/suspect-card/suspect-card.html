@@ -1,0 +1,61 @@
+<article class="suspect-card">
+  <header class="card-header">
+    <div class="photo-frame">
+      <img
+        class="photo"
+        [src]="suspect.Photograph"
+        [alt]="suspect.FullName"
+      />
+    </div>
+
+    <div class="main-info">
+      <div class="title-row">
+        <h3>{{ suspect.FullName }}</h3>
+        <span class="status" [ngClass]="statusClass">
+          {{ suspect.Status }}
+        </span>
+      </div>
+
+      <!-- <p class="identity-line">
+        NIC <strong>{{ suspect.NIC }}</strong>
+      </p> -->
+    </div>
+  </header>
+
+  <div class="details-grid">
+    <div class="detail-item">
+      <span>NIC</span>
+      <strong>{{ suspect.NIC }}</strong>
+    </div>
+
+    <div class="detail-item">
+      <span>Passport Number</span>
+      <strong>{{ suspect.PassportNumber }}</strong>
+    </div>
+
+    <div class="detail-item">
+      <span>Case Number</span>
+      <strong>{{ suspect.CaseNumber }}</strong>
+    </div>
+
+    <div class="detail-item">
+      <span>Offence</span>
+      <strong>{{ suspect.OffenceType }}</strong>
+    </div>
+
+    <div class="detail-item">
+      <span>Police Station</span>
+      <strong>{{ suspect.PoliceStation }}</strong>
+    </div>
+
+    <div class="detail-item">
+      <span>Recorded Date</span>
+      <strong>{{ suspect.DateRecorded }}</strong>
+    </div>
+
+    <div class="detail-item detail-item-wide">
+      <span>Recorded Officer</span>
+      <strong>{{ suspect.RecordingOfficer }}</strong>
+    </div>
+  </div>
+</article>

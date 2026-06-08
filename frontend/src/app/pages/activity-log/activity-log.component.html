@@ -1,0 +1,111 @@
+<section class="activity-log-page">
+  <app-breadcrumb></app-breadcrumb>
+
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">System Audit</p>
+      <h1>Activity Log</h1>
+      <p class="subtitle">Review system audit trail, access attempts and record changes.</p>
+    </div>
+  </header>
+
+  <section class="toolbar">
+    <div class="search-box">
+      <i class="ti ti-search"></i>
+      <input
+        #searchInput
+        type="text"
+        placeholder="Search action, user, entity or IP"
+        [value]="searchText"
+        (input)="search(searchInput.value)"
+      />
+    </div>
+
+    <div class="filter-grid">
+      <label class="filter-field">
+        <span>Action Type</span>
+        <select #actionTypeInput [value]="selectedActionType" (change)="filterByActionType(actionTypeInput.value)">
+          <option value="">All action types</option>
+          <option *ngFor="let actionType of actionTypes" [value]="actionType">{{ actionType }}</option>
+        </select>
+      </label>
+
+      <label class="filter-field">
+        <span>Status</span>
+        <select #statusInput [value]="selectedStatus" (change)="filterByStatus(statusInput.value)">
+          <option value="">All statuses</option>
+          <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+        </select>
+      </label>
+
+      <label class="filter-field">
+        <span>Severity</span>
+        <select #severityInput [value]="selectedSeverity" (change)="filterBySeverity(severityInput.value)">
+          <option value="">All severities</option>
+          <option *ngFor="let severity of severities" [value]="severity">{{ severity }}</option>
+        </select>
+      </label>
+
+      <label class="filter-field">
+        <span>User Role</span>
+        <select #roleInput [value]="selectedUserRole" (change)="filterByUserRole(roleInput.value)">
+          <option value="">All roles</option>
+          <option *ngFor="let role of userRoles" [value]="role">{{ role }}</option>
+        </select>
+      </label>
+
+      <button class="reset-button" type="button" (click)="clearFilters()">Clear Filters</button>
+    </div>
+  </section>
+
+  <section class="table-card" *ngIf="filteredLogs.length > 0">
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Date/Time</th>
+            <th>Action</th>
+            <th>User</th>
+            <th>Entity</th>
+            <th>Status</th>
+            <th>Severity</th>
+            <th>IP Address</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr
+            *ngFor="let log of filteredLogs; trackBy: trackByLogId"
+            tabindex="0"
+            (click)="viewLog(log.LogId)"
+            (keydown.enter)="viewLog(log.LogId)"
+            (keydown.space)="viewLog(log.LogId); $event.preventDefault()"
+          >
+            <td>{{ log.DateTime | date: 'medium' }}</td>
+            <td>
+              <strong>{{ log.Action }}</strong>
+              <span>{{ log.ActionType }}</span>
+            </td>
+            <td>
+              <strong>{{ log.Username }}</strong>
+              <span>{{ log.UserId }} · {{ log.UserRole }}</span>
+            </td>
+            <td>
+              <strong>{{ log.EntityType || '-' }}</strong>
+              <span>{{ log.EntityId || '-' }}</span>
+            </td>
+            <td><span class="badge" [ngClass]="statusClass(log.Status)">{{ log.Status }}</span></td>
+            <td><span class="badge" [ngClass]="severityClass(log.Severity)">{{ log.Severity }}</span></td>
+            <td>{{ log.IpAddress }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="empty-state" *ngIf="filteredLogs.length === 0">
+    <i class="ti ti-file-search"></i>
+    <h3>No activity logs found</h3>
+    <p>Try another search term or adjust the selected filters.</p>
+  </section>
+</section>

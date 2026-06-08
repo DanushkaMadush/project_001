@@ -6,7 +6,7 @@
 
       <!-- Hero greeting -->
       <div class="hero">
-        <div class="hero-greeting">{{ greeting }}, {{ adminFirstName }}.</div>
+        <div class="hero-greeting">{{ greeting }}, {{ officerFirstName }}.</div>
         <div class="hero-meta">{{ liveTime }}</div>
       </div>
 
@@ -22,11 +22,11 @@
         </div>
         <div class="stat-card amber">
           <div class="stat-label">
-            <i class="ti ti-shield-lock" aria-hidden="true"></i>
-            System users
+            <i class="ti ti-file-description" aria-hidden="true"></i>
+            Active cases
           </div>
-          <div class="stat-value">{{ stats.systemUsers }}</div>
-          <div class="stat-sub">Officers &amp; admins</div>
+          <div class="stat-value">{{ stats.activeCases }}</div>
+          <div class="stat-sub">Currently open</div>
         </div>
         <div class="stat-card red">
           <div class="stat-label">
@@ -57,74 +57,41 @@
       <span class="section-title">Quick actions</span>
     </div>
     <div class="action-grid">
-
-      <a [routerLink]="['/user-management']" class="action-card">
-        <div class="action-icon icon-blue">
-          <i class="ti ti-users" aria-hidden="true"></i>
+      <a [routerLink]="['/suspect-add']" class="action-card add">
+        <div class="action-icon">
+          <i class="ti ti-user-plus" aria-hidden="true"></i>
         </div>
-        <div class="action-title">User management</div>
+        <div class="action-title">Add new suspect</div>
         <div class="action-desc">
-          Add, edit or disable officer and admin accounts. Reset passwords
-          and manage account status across the unit.
+          Create a new suspect profile with full name, NIC / passport,
+          photograph, contact number, address and case reference.
         </div>
         <div class="action-footer">
-          <span class="action-tag tag-blue">{{ stats.systemUsers }} users</span>
+          <span class="action-tag">New record</span>
           <i class="ti ti-arrow-right action-arrow" aria-hidden="true"></i>
         </div>
       </a>
-
-      <a [routerLink]="['/role-management']" class="action-card">
-        <div class="action-icon icon-amber">
-          <i class="ti ti-key" aria-hidden="true"></i>
+      <a [routerLink]="['/suspect-list']" class="action-card view">
+        <div class="action-icon">
+          <i class="ti ti-list-search" aria-hidden="true"></i>
         </div>
-        <div class="action-title">Role management</div>
+        <div class="action-title">View suspects</div>
         <div class="action-desc">
-          Define and assign roles with specific permissions. Control what
-          each officer or group can view, add or modify.
+          Browse, search and filter all recorded suspect profiles by name,
+          NIC, case number, address or offence type.
         </div>
         <div class="action-footer">
-          <span class="action-tag tag-amber">{{ stats.totalRoles }} roles</span>
+          <span class="action-tag">{{ stats.totalSuspects | number }} records</span>
           <i class="ti ti-arrow-right action-arrow" aria-hidden="true"></i>
         </div>
       </a>
-
-      <a [routerLink]="['/activity-log']" class="action-card">
-        <div class="action-icon icon-purple">
-          <i class="ti ti-history" aria-hidden="true"></i>
-        </div>
-        <div class="action-title">Activity log</div>
-        <div class="action-desc">
-          Review a full audit trail of all system actions — logins, record
-          changes, deletions and access attempts.
-        </div>
-        <div class="action-footer">
-          <span class="action-tag tag-purple">Audit trail</span>
-          <i class="ti ti-arrow-right action-arrow" aria-hidden="true"></i>
-        </div>
-      </a>
-
-      <a [routerLink]="['/reports']" class="action-card">
-        <div class="action-icon icon-green">
-          <i class="ti ti-report-analytics" aria-hidden="true"></i>
-        </div>
-        <div class="action-title">Reports</div>
-        <div class="action-desc">
-          Generate individual suspect reports, full history summaries and
-          export A4 PDF printouts for court or record use.
-        </div>
-        <div class="action-footer">
-          <span class="action-tag tag-green">Export &amp; print</span>
-          <i class="ti ti-arrow-right action-arrow" aria-hidden="true"></i>
-        </div>
-      </a>
-
     </div>
 
     <!-- Recent activity -->
     <div class="activity-section">
       <div class="section-header">
         <span class="section-title">Recent activity</span>
-        <a [routerLink]="['/activity-log']" class="view-all-link">View all</a>
+        <a href="#" class="view-all-link">View all</a>
       </div>
       <div class="activity-list">
         <div class="activity-row" *ngFor="let item of recentActivity">

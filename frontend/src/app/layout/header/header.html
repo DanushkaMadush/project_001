@@ -1,0 +1,37 @@
+<div class="header">
+  <div class="header-inner">
+
+    <div class="topnav">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="ti ti-shield-lock"></i>
+        </div>
+
+        <div>
+          <div class="title">Narcotics Control Unit</div>
+          <div class="brand-sub">Colombo Division</div>
+        </div>
+      </div>
+
+      <div class="nav-right">
+
+        <button class="nav-btn" (click)="toggleTheme()" [title]="isDark ? 'Switch to light mode' : 'Switch to dark mode'" aria-label="Toggle theme">
+          <i class="ti" [ngClass]="isDark ? 'ti-sun' : 'ti-moon'"></i>
+        </button>
+
+        <a href="#" class="nav-btn" title="Settings" aria-label="Settings">
+          <i class="ti ti-settings"></i>
+        </a>
+
+        <div class="nav-divider"></div>
+
+        <div class="officer-pill">
+          <div class="avatar">PF</div>
+          <span class="officer-name">P.C Fernando</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
