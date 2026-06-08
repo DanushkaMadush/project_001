@@ -22,8 +22,8 @@ export class ActivityLogViewComponent {
     private breadcrumbService: BreadcrumbService
   ) {
     this.breadcrumbService.set([
-      { label: 'Home', path: '/home' },
-      { label: 'Activity Log', path: '/activity-log' },
+      { label: 'Home', path: '/dashboard/home' },
+      { label: 'Activity Log', path: '/dashboard/activity-log' },
       { label: 'Log Details' },
     ]);
 
@@ -39,7 +39,7 @@ export class ActivityLogViewComponent {
   }
 
   backToLogs(): void {
-    this.router.navigate(['/activity-log']);
+    this.router.navigate(['dashboard/activity-log']);
   }
 
   badgeClass(value: string): string {

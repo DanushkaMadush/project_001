@@ -81,7 +81,7 @@ export class ActivityLogComponent {
   }
 
   viewLog(logId: string): void {
-    this.router.navigate(['/activity-log', logId]);
+    this.router.navigate(['dashboard/activity-log', logId]);
   }
 
   statusClass(value: string): string {
