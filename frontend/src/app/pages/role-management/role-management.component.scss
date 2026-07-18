@@ -365,3 +365,29 @@
   border-color: var(--navy-500);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
 }
+
+.btn-primary {
+  background: var(--navy-600);
+  color: white;
+  padding: 0 18px;
+  height: 46px;
+
+  &:hover {
+    opacity: .95;
+  }
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s;
+  font-weight: 500;
+
+  i {
+    font-size: 16px;
+  }
+}

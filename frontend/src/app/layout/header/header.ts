@@ -9,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Header implements OnInit {
    isDark = false;
+   user  : string = '';
+
  
   ngOnInit(): void {
     // 1. Check if user has previously set a preference
     const saved = localStorage.getItem('theme');
+    this.user = localStorage.getItem('currentUser')?.toString() ?? 'Admin';
  
     if (saved) {
       this.isDark = saved === 'dark';
